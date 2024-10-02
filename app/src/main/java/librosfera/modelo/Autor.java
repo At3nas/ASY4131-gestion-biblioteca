@@ -8,15 +8,6 @@ package librosfera.modelo;
  *
  * @author Cetecom
  */
-public class Libro {
-   // ATRIBUTOS //
-   String titulo;
-   Autor autor;
-   String sinopsis;
-   Year annio_publicacion;
-   String genero;
-   
-   // MÉTODOS //
-   
-   
+public class Autor {
+    
 }
