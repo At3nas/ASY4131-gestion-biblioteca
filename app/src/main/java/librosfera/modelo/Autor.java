@@ -1,26 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package librosfera.modelo;
 
-/**
- *
- * @author Cetecom
- */
 public class Autor {
 
     // ATRIBUTOS //
-    private Integer id_autor;
-    private String nombre_autor;
+    private Integer idAutor;
+    private String nombreAutor;
     private String pais;
     private ListaGeneros generos;
     private String bio;
 
     // CONSTRUCTOR //
-    public Autor(Integer id_autor, String nombre_autor, String pais, ListaGeneros generos, String bio) {
-        this.id_autor = id_autor;
-        this.nombre_autor = nombre_autor;
+    public Autor(Integer idAutor, String nombreAutor, String pais, ListaGeneros generos, String bio) {
+        this.idAutor = idAutor;
+        this.nombreAutor = nombreAutor;
         this.pais = pais;
         this.generos = generos;
         this.bio = bio;
@@ -28,11 +20,11 @@ public class Autor {
 
     // GETTER //
     public Integer getId_autor() {
-        return id_autor;
+        return idAutor;
     }
 
     public String getNombre_autor() {
-        return nombre_autor;
+        return nombreAutor;
     }
 
     public String getPais() {
@@ -48,12 +40,12 @@ public class Autor {
     }
 
     // SETTER //
-    public void setId_autor(Integer id_autor) {
-        this.id_autor = id_autor;
+    public void setId_autor(Integer idAutor) {
+        this.idAutor = idAutor;
     }
 
-    public void setNombre_autor(String nombre_autor) {
-        this.nombre_autor = nombre_autor;
+    public void setNombre_autor(String nombreAutor) {
+        this.nombreAutor = nombreAutor;
     }
 
     public void setPais(String pais) {
