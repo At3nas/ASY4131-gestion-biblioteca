@@ -14,16 +14,20 @@ public class Libro {
     private String titulo;
     private Autor autor;
     private String sinopsis;
-    private Year annio_publicacion;
+    private Year annioPublicacion;
     private Genero genero;
+    private Integer nroPaginas;
+    private String isbn;
 
     // CONSTRUCTOR //
-    public Libro(String titulo, Autor autor, String sinopsis, Year annio_publicacion, Genero genero) {
+    public Libro(String titulo, Autor autor, String sinopsis, Year annioPublicacion, Genero genero, Integer nroPaginas, String isbn) {
         this.titulo = titulo;
         this.autor = autor;
         this.sinopsis = sinopsis;
-        this.annio_publicacion = annio_publicacion;
+        this.annioPublicacion = annioPublicacion;
         this.genero = genero;
+        this.nroPaginas = nroPaginas;
+        this.isbn = isbn;
     }
 
     // GETTER //
@@ -39,12 +43,20 @@ public class Libro {
         return sinopsis;
     }
 
-    public Year getAnnio_publicacion() {
-        return annio_publicacion;
+    public Year getAnnioPublicacion() {
+        return annioPublicacion;
     }
 
     public Genero getGenero() {
         return genero;
+    }
+
+    public Integer getNroPaginas() {
+        return nroPaginas;
+    }
+
+    public String getIsbn() {
+        return isbn;
     }
 
     // SETTER //
@@ -60,12 +72,20 @@ public class Libro {
         this.sinopsis = sinopsis;
     }
 
-    public void setAnnio_publicacion(Year annio_publicacion) {
-        this.annio_publicacion = annio_publicacion;
+    public void setAnnioPublicacion(Year annioPublicacion) {
+        this.annioPublicacion = annioPublicacion;
     }
 
     public void setGenero(Genero genero) {
         this.genero = genero;
+    }
+
+    public void setNroPaginas(Integer nroPaginas) {
+        this.nroPaginas = nroPaginas;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 
     // MÉTODOS //
