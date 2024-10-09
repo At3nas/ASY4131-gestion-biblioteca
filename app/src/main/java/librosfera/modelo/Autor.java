@@ -9,7 +9,12 @@ public class Autor {
     private ListaGeneros generos;
     private String bio;
 
-    // CONSTRUCTOR //
+    // CONSTRUCTOR // 
+    // constructor vacío //
+    public Autor() {
+    }
+    
+    // constructor con parámetros //
     public Autor(Integer idAutor, String nombreAutor, String pais, ListaGeneros generos, String bio) {
         this.idAutor = idAutor;
         this.nombreAutor = nombreAutor;
