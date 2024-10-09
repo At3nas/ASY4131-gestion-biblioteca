@@ -3,31 +3,31 @@ package librosfera.modelo;
 public class Genero {
 
     // ATRIBUTOS //
-    private String nombre_genero;
-    private Integer id_genero;
+    private String nombreGenero;
+    private Integer idGenero;
 
     // CONSTRUCTOR //
-    public Genero(String nombre_genero, Integer id_genero) {
-        this.nombre_genero = nombre_genero;
-        this.id_genero = id_genero;
+    public Genero(String nombreGenero, Integer idGenero) {
+        this.nombreGenero = nombreGenero;
+        this.idGenero = idGenero;
     }
 
     // GETTER //
     public String getNombre_genero() {
-        return nombre_genero;
+        return nombreGenero;
     }
 
     public Integer getId_genero() {
-        return id_genero;
+        return idGenero;
     }
 
     // SETTER //
-    public void setNombre_genero(String nombre_genero) {
-        this.nombre_genero = nombre_genero;
+    public void setNombre_genero(String nombreGenero) {
+        this.nombreGenero = nombreGenero;
     }
 
-    public void setId_genero(Integer id_genero) {
-        this.id_genero = id_genero;
+    public void setId_genero(Integer idGenero) {
+        this.idGenero = idGenero;
     }
 
 }
