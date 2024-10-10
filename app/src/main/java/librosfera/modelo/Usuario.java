@@ -4,10 +4,10 @@ package librosfera.modelo;
 
 public class Usuario {
     // ATRIBUTOS //
-    private String idUsuario;
-    private String nombreUsuario;
-    private String claveUsuario;
-    private Libreria libreria;
+    public String idUsuario;
+    public String nombreUsuario;
+    public String claveUsuario;
+    public Libreria libreria;
     
     // CONSTRUCTOR //
     public Usuario() {
@@ -24,4 +24,8 @@ public class Usuario {
     
     
     // SETTER //
+    
+    
+    // MÉTODOS //
+
 }
