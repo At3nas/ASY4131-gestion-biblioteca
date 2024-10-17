@@ -19,12 +19,9 @@ public class Inicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelSidebar = new javax.swing.JPanel();
-        itemInicio = new javax.swing.JLabel();
-        itemListas = new javax.swing.JLabel();
-        itemExplorar = new javax.swing.JLabel();
-        itemHistorial = new javax.swing.JLabel();
-        panelContent = new javax.swing.JPanel();
+        panelBackground = new javax.swing.JPanel();
+        panelCard = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 153));
@@ -32,85 +29,60 @@ public class Inicio extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(270, 1024));
         setPreferredSize(new java.awt.Dimension(270, 1024));
 
-        panelSidebar.setBackground(new java.awt.Color(102, 102, 102));
-        panelSidebar.setMaximumSize(new java.awt.Dimension(270, 1024));
-        panelSidebar.setMinimumSize(new java.awt.Dimension(270, 1024));
-        panelSidebar.setPreferredSize(new java.awt.Dimension(270, 1024));
+        panelCard.setBackground(new java.awt.Color(255, 255, 255));
+        panelCard.setMaximumSize(new java.awt.Dimension(650, 530));
+        panelCard.setMinimumSize(new java.awt.Dimension(650, 530));
+        panelCard.setPreferredSize(new java.awt.Dimension(650, 530));
 
-        itemInicio.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        itemInicio.setForeground(new java.awt.Color(255, 255, 255));
-        itemInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librosfera/icons/house.png"))); // NOI18N
-        itemInicio.setText("Inicio");
-
-        itemListas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        itemListas.setForeground(new java.awt.Color(255, 255, 255));
-        itemListas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librosfera/icons/list.png"))); // NOI18N
-        itemListas.setText("Listas");
-
-        itemExplorar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        itemExplorar.setForeground(new java.awt.Color(255, 255, 255));
-        itemExplorar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librosfera/icons/search.png"))); // NOI18N
-        itemExplorar.setText("Explorar");
-
-        itemHistorial.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        itemHistorial.setForeground(new java.awt.Color(255, 255, 255));
-        itemHistorial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librosfera/icons/history.png"))); // NOI18N
-        itemHistorial.setText("Historial");
-
-        javax.swing.GroupLayout panelSidebarLayout = new javax.swing.GroupLayout(panelSidebar);
-        panelSidebar.setLayout(panelSidebarLayout);
-        panelSidebarLayout.setHorizontalGroup(
-            panelSidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelSidebarLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(panelSidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(itemInicio)
-                    .addComponent(itemListas)
-                    .addComponent(itemExplorar)
-                    .addComponent(itemHistorial))
-                .addContainerGap(142, Short.MAX_VALUE))
+        javax.swing.GroupLayout panelCardLayout = new javax.swing.GroupLayout(panelCard);
+        panelCard.setLayout(panelCardLayout);
+        panelCardLayout.setHorizontalGroup(
+            panelCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
         );
-        panelSidebarLayout.setVerticalGroup(
-            panelSidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelSidebarLayout.createSequentialGroup()
-                .addGap(210, 210, 210)
-                .addComponent(itemInicio)
-                .addGap(32, 32, 32)
-                .addComponent(itemListas)
-                .addGap(32, 32, 32)
-                .addComponent(itemExplorar)
-                .addGap(32, 32, 32)
-                .addComponent(itemHistorial)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        panelCardLayout.setVerticalGroup(
+            panelCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 530, Short.MAX_VALUE)
         );
 
-        panelContent.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setText("¡Bienvenida a Librosfera!");
 
-        javax.swing.GroupLayout panelContentLayout = new javax.swing.GroupLayout(panelContent);
-        panelContent.setLayout(panelContentLayout);
-        panelContentLayout.setHorizontalGroup(
-            panelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 852, Short.MAX_VALUE)
+        javax.swing.GroupLayout panelBackgroundLayout = new javax.swing.GroupLayout(panelBackground);
+        panelBackground.setLayout(panelBackgroundLayout);
+        panelBackgroundLayout.setHorizontalGroup(
+            panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBackgroundLayout.createSequentialGroup()
+                .addGroup(panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelBackgroundLayout.createSequentialGroup()
+                        .addGap(250, 250, 250)
+                        .addComponent(panelCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelBackgroundLayout.createSequentialGroup()
+                        .addGap(463, 463, 463)
+                        .addComponent(jLabel1)))
+                .addContainerGap(313, Short.MAX_VALUE))
         );
-        panelContentLayout.setVerticalGroup(
-            panelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1030, Short.MAX_VALUE)
+        panelBackgroundLayout.setVerticalGroup(
+            panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBackgroundLayout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(panelCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelSidebar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(panelBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelSidebar, javax.swing.GroupLayout.DEFAULT_SIZE, 1036, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(panelContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(panelBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -153,11 +125,8 @@ public class Inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel itemExplorar;
-    private javax.swing.JLabel itemHistorial;
-    private javax.swing.JLabel itemInicio;
-    private javax.swing.JLabel itemListas;
-    private javax.swing.JPanel panelContent;
-    private javax.swing.JPanel panelSidebar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel panelBackground;
+    private javax.swing.JPanel panelCard;
     // End of variables declaration//GEN-END:variables
 }
