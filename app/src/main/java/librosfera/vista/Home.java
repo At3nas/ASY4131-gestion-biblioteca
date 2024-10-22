@@ -33,7 +33,7 @@ public class Home extends javax.swing.JPanel {
         itemHistorial = new javax.swing.JLabel();
         panelContent = new javax.swing.JPanel();
 
-        panelSidebar.setBackground(new java.awt.Color(102, 102, 102));
+        panelSidebar.setBackground(new java.awt.Color(58, 33, 36));
         panelSidebar.setMaximumSize(new java.awt.Dimension(270, 1024));
         panelSidebar.setMinimumSize(new java.awt.Dimension(270, 1024));
 
@@ -84,7 +84,7 @@ public class Home extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panelContent.setBackground(new java.awt.Color(255, 255, 255));
+        panelContent.setBackground(new java.awt.Color(250, 250, 250));
 
         javax.swing.GroupLayout panelContentLayout = new javax.swing.GroupLayout(panelContent);
         panelContent.setLayout(panelContentLayout);

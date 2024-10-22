@@ -38,7 +38,7 @@ public class Inicio extends javax.swing.JFrame {
         panelCard.setLayout(panelCardLayout);
         panelCardLayout.setHorizontalGroup(
             panelCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 650, Short.MAX_VALUE)
+            .addGap(0, 954, Short.MAX_VALUE)
         );
         panelCardLayout.setVerticalGroup(
             panelCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -55,12 +55,12 @@ public class Inicio extends javax.swing.JFrame {
             .addGroup(panelBackgroundLayout.createSequentialGroup()
                 .addGroup(panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelBackgroundLayout.createSequentialGroup()
-                        .addGap(250, 250, 250)
-                        .addComponent(panelCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelBackgroundLayout.createSequentialGroup()
                         .addGap(463, 463, 463)
-                        .addComponent(jLabel1)))
-                .addContainerGap(313, Short.MAX_VALUE))
+                        .addComponent(jLabel1))
+                    .addGroup(panelBackgroundLayout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(panelCard, javax.swing.GroupLayout.PREFERRED_SIZE, 954, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
         panelBackgroundLayout.setVerticalGroup(
             panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

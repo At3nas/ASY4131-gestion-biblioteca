@@ -218,9 +218,7 @@ public class RegistroUsuario extends javax.swing.JPanel {
 
     private void buttonLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonLoginMouseClicked
 
-        // INPUTS //
-        String nombreUsuario = inputUsername.getText();
-        String claveUsuario = inputPassword.getText();
+   
     }//GEN-LAST:event_buttonLoginMouseClicked
 
 
