@@ -33,10 +33,18 @@ public class Login extends javax.swing.JPanel {
         labelEmail = new javax.swing.JLabel();
         fieldEmail = new javax.swing.JTextField();
         labelPassword = new javax.swing.JLabel();
-        fieldPassword = new javax.swing.JTextField();
         btnLogin = new javax.swing.JButton();
+        fieldPassword = new javax.swing.JPasswordField();
         divider1 = new javax.swing.JPanel();
         divider2 = new javax.swing.JPanel();
+        smallDivider2 = new javax.swing.JPanel();
+        smallDivider1 = new javax.swing.JPanel();
+        panelCreateAccount = new javax.swing.JPanel();
+        labelForgotPassword = new javax.swing.JLabel();
+        labelResetPassword = new javax.swing.JLabel();
+        panelPasswordReset1 = new javax.swing.JPanel();
+        labelForgotPassword1 = new javax.swing.JLabel();
+        labelResetPassword1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(900, 650));
         setMinimumSize(new java.awt.Dimension(900, 650));
@@ -50,8 +58,10 @@ public class Login extends javax.swing.JPanel {
         labelLoginMsg.setText("Inicie sesión para continuar");
         jPanel1.add(labelLoginMsg, new java.awt.GridBagConstraints());
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel3.setPreferredSize(new java.awt.Dimension(300, 400));
+        jPanel3.setBackground(new java.awt.Color(250, 250, 250));
+        jPanel3.setMaximumSize(new java.awt.Dimension(350, 450));
+        jPanel3.setMinimumSize(new java.awt.Dimension(350, 450));
+        jPanel3.setPreferredSize(new java.awt.Dimension(350, 450));
         jPanel3.setLayout(new java.awt.GridBagLayout());
 
         labelEmail.setBackground(new java.awt.Color(51, 51, 51));
@@ -64,9 +74,11 @@ public class Login extends javax.swing.JPanel {
         gridBagConstraints.gridy = 0;
         jPanel3.add(labelEmail, gridBagConstraints);
 
-        fieldEmail.setBackground(new java.awt.Color(153, 153, 153));
+        fieldEmail.setBackground(new java.awt.Color(238, 238, 238));
         fieldEmail.setForeground(new java.awt.Color(102, 102, 102));
+        fieldEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fieldEmail.setBorder(null);
+        fieldEmail.setMargin(new java.awt.Insets(2, 6, 16, 6));
         fieldEmail.setMaximumSize(new java.awt.Dimension(200, 30));
         fieldEmail.setMinimumSize(new java.awt.Dimension(200, 30));
         fieldEmail.setPreferredSize(new java.awt.Dimension(200, 30));
@@ -77,7 +89,9 @@ public class Login extends javax.swing.JPanel {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 2;
+        gridBagConstraints.ipady = 2;
         jPanel3.add(fieldEmail, gridBagConstraints);
 
         labelPassword.setBackground(new java.awt.Color(51, 51, 51));
@@ -87,24 +101,8 @@ public class Login extends javax.swing.JPanel {
         labelPassword.setText("Contraseña");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        jPanel3.add(labelPassword, gridBagConstraints);
-
-        fieldPassword.setBackground(new java.awt.Color(153, 153, 153));
-        fieldPassword.setForeground(new java.awt.Color(102, 102, 102));
-        fieldPassword.setBorder(null);
-        fieldPassword.setMaximumSize(new java.awt.Dimension(200, 30));
-        fieldPassword.setMinimumSize(new java.awt.Dimension(200, 30));
-        fieldPassword.setPreferredSize(new java.awt.Dimension(200, 30));
-        fieldPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldPasswordActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
-        jPanel3.add(fieldPassword, gridBagConstraints);
+        jPanel3.add(labelPassword, gridBagConstraints);
 
         btnLogin.setBackground(new java.awt.Color(135, 23, 35));
         btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -112,22 +110,36 @@ public class Login extends javax.swing.JPanel {
         btnLogin.setText("Iniciar sesión");
         btnLogin.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnLogin.setMaximumSize(new java.awt.Dimension(180, 30));
-        btnLogin.setMinimumSize(new java.awt.Dimension(180, 30));
-        btnLogin.setPreferredSize(new java.awt.Dimension(180, 30));
+        btnLogin.setMaximumSize(new java.awt.Dimension(170, 40));
+        btnLogin.setMinimumSize(new java.awt.Dimension(170, 40));
+        btnLogin.setPreferredSize(new java.awt.Dimension(170, 40));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 9;
+        jPanel3.add(btnLogin, gridBagConstraints);
+
+        fieldPassword.setBackground(new java.awt.Color(238, 238, 238));
+        fieldPassword.setBorder(null);
+        fieldPassword.setMaximumSize(new java.awt.Dimension(200, 30));
+        fieldPassword.setMinimumSize(new java.awt.Dimension(200, 30));
+        fieldPassword.setPreferredSize(new java.awt.Dimension(200, 30));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
-        jPanel3.add(btnLogin, gridBagConstraints);
+        gridBagConstraints.ipadx = 2;
+        gridBagConstraints.ipady = 2;
+        jPanel3.add(fieldPassword, gridBagConstraints);
 
-        divider1.setBackground(new java.awt.Color(204, 204, 204));
-        divider1.setPreferredSize(new java.awt.Dimension(100, 16));
+        divider1.setBackground(new java.awt.Color(250, 250, 250));
+        divider1.setMaximumSize(new java.awt.Dimension(300, 16));
+        divider1.setMinimumSize(new java.awt.Dimension(300, 16));
+        divider1.setPreferredSize(new java.awt.Dimension(300, 16));
 
         javax.swing.GroupLayout divider1Layout = new javax.swing.GroupLayout(divider1);
         divider1.setLayout(divider1Layout);
         divider1Layout.setHorizontalGroup(
             divider1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
         divider1Layout.setVerticalGroup(
             divider1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,17 +148,18 @@ public class Login extends javax.swing.JPanel {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 3;
         jPanel3.add(divider1, gridBagConstraints);
 
-        divider2.setBackground(new java.awt.Color(204, 204, 204));
-        divider2.setPreferredSize(new java.awt.Dimension(100, 16));
+        divider2.setBackground(new java.awt.Color(250, 250, 250));
+        divider2.setMaximumSize(new java.awt.Dimension(300, 16));
+        divider2.setMinimumSize(new java.awt.Dimension(300, 16));
 
         javax.swing.GroupLayout divider2Layout = new javax.swing.GroupLayout(divider2);
         divider2.setLayout(divider2Layout);
         divider2Layout.setHorizontalGroup(
             divider2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
         divider2Layout.setVerticalGroup(
             divider2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,8 +168,91 @@ public class Login extends javax.swing.JPanel {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridy = 7;
         jPanel3.add(divider2, gridBagConstraints);
+
+        smallDivider2.setBackground(new java.awt.Color(250, 250, 250));
+        smallDivider2.setMaximumSize(new java.awt.Dimension(300, 8));
+        smallDivider2.setMinimumSize(new java.awt.Dimension(300, 8));
+
+        javax.swing.GroupLayout smallDivider2Layout = new javax.swing.GroupLayout(smallDivider2);
+        smallDivider2.setLayout(smallDivider2Layout);
+        smallDivider2Layout.setHorizontalGroup(
+            smallDivider2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+        smallDivider2Layout.setVerticalGroup(
+            smallDivider2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 8, Short.MAX_VALUE)
+        );
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        jPanel3.add(smallDivider2, gridBagConstraints);
+
+        smallDivider1.setBackground(new java.awt.Color(250, 250, 250));
+        smallDivider1.setMaximumSize(new java.awt.Dimension(300, 8));
+        smallDivider1.setMinimumSize(new java.awt.Dimension(300, 8));
+        smallDivider1.setPreferredSize(new java.awt.Dimension(300, 8));
+
+        javax.swing.GroupLayout smallDivider1Layout = new javax.swing.GroupLayout(smallDivider1);
+        smallDivider1.setLayout(smallDivider1Layout);
+        smallDivider1Layout.setHorizontalGroup(
+            smallDivider1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+        smallDivider1Layout.setVerticalGroup(
+            smallDivider1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 8, Short.MAX_VALUE)
+        );
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        jPanel3.add(smallDivider1, gridBagConstraints);
+
+        panelCreateAccount.setBackground(new java.awt.Color(250, 250, 250));
+        panelCreateAccount.setMaximumSize(new java.awt.Dimension(250, 30));
+        panelCreateAccount.setMinimumSize(new java.awt.Dimension(250, 30));
+        panelCreateAccount.setPreferredSize(new java.awt.Dimension(250, 30));
+        panelCreateAccount.setLayout(new java.awt.GridBagLayout());
+
+        labelForgotPassword.setForeground(new java.awt.Color(51, 51, 51));
+        labelForgotPassword.setText("¿Aún no tienes cuenta?");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.ipadx = 4;
+        panelCreateAccount.add(labelForgotPassword, gridBagConstraints);
+
+        labelResetPassword.setForeground(new java.awt.Color(0, 51, 153));
+        labelResetPassword.setText("Regístrate");
+        panelCreateAccount.add(labelResetPassword, new java.awt.GridBagConstraints());
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 10;
+        jPanel3.add(panelCreateAccount, gridBagConstraints);
+
+        panelPasswordReset1.setBackground(new java.awt.Color(250, 250, 250));
+        panelPasswordReset1.setMaximumSize(new java.awt.Dimension(250, 30));
+        panelPasswordReset1.setMinimumSize(new java.awt.Dimension(250, 30));
+        panelPasswordReset1.setPreferredSize(new java.awt.Dimension(250, 30));
+        panelPasswordReset1.setLayout(new java.awt.GridBagLayout());
+
+        labelForgotPassword1.setForeground(new java.awt.Color(51, 51, 51));
+        labelForgotPassword1.setText("¿Olvidaste tu contraseña?");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.ipadx = 4;
+        panelPasswordReset1.add(labelForgotPassword1, gridBagConstraints);
+
+        labelResetPassword1.setForeground(new java.awt.Color(0, 51, 153));
+        labelResetPassword1.setText("Recupérala");
+        panelPasswordReset1.add(labelResetPassword1, new java.awt.GridBagConstraints());
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        jPanel3.add(panelPasswordReset1, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -175,10 +271,6 @@ public class Login extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void fieldPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fieldPasswordActionPerformed
-
     private void fieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldEmailActionPerformed
@@ -189,11 +281,19 @@ public class Login extends javax.swing.JPanel {
     private javax.swing.JPanel divider1;
     private javax.swing.JPanel divider2;
     private javax.swing.JTextField fieldEmail;
-    private javax.swing.JTextField fieldPassword;
+    private javax.swing.JPasswordField fieldPassword;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel labelEmail;
+    private javax.swing.JLabel labelForgotPassword;
+    private javax.swing.JLabel labelForgotPassword1;
     private javax.swing.JLabel labelLoginMsg;
     private javax.swing.JLabel labelPassword;
+    private javax.swing.JLabel labelResetPassword;
+    private javax.swing.JLabel labelResetPassword1;
+    private javax.swing.JPanel panelCreateAccount;
+    private javax.swing.JPanel panelPasswordReset1;
+    private javax.swing.JPanel smallDivider1;
+    private javax.swing.JPanel smallDivider2;
     // End of variables declaration//GEN-END:variables
 }
