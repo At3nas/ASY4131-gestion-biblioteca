@@ -35,16 +35,13 @@ public class Login extends javax.swing.JPanel {
         labelPassword = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
         fieldPassword = new javax.swing.JPasswordField();
-        divider1 = new javax.swing.JPanel();
-        divider2 = new javax.swing.JPanel();
-        smallDivider2 = new javax.swing.JPanel();
-        smallDivider1 = new javax.swing.JPanel();
         panelCreateAccount = new javax.swing.JPanel();
         labelForgotPassword = new javax.swing.JLabel();
         labelResetPassword = new javax.swing.JLabel();
         panelPasswordReset1 = new javax.swing.JPanel();
         labelForgotPassword1 = new javax.swing.JLabel();
         labelResetPassword1 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
 
         setMaximumSize(new java.awt.Dimension(900, 650));
         setMinimumSize(new java.awt.Dimension(900, 650));
@@ -72,6 +69,7 @@ public class Login extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 4, 0);
         jPanel3.add(labelEmail, gridBagConstraints);
 
         fieldEmail.setBackground(new java.awt.Color(238, 238, 238));
@@ -89,9 +87,10 @@ public class Login extends javax.swing.JPanel {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.ipadx = 2;
         gridBagConstraints.ipady = 2;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 8, 0);
         jPanel3.add(fieldEmail, gridBagConstraints);
 
         labelPassword.setBackground(new java.awt.Color(51, 51, 51));
@@ -101,7 +100,8 @@ public class Login extends javax.swing.JPanel {
         labelPassword.setText("Contraseña");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 4, 0);
         jPanel3.add(labelPassword, gridBagConstraints);
 
         btnLogin.setBackground(new java.awt.Color(135, 23, 35));
@@ -115,7 +115,7 @@ public class Login extends javax.swing.JPanel {
         btnLogin.setPreferredSize(new java.awt.Dimension(170, 40));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 9;
+        gridBagConstraints.gridy = 6;
         jPanel3.add(btnLogin, gridBagConstraints);
 
         fieldPassword.setBackground(new java.awt.Color(238, 238, 238));
@@ -125,92 +125,11 @@ public class Login extends javax.swing.JPanel {
         fieldPassword.setPreferredSize(new java.awt.Dimension(200, 30));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 3;
         gridBagConstraints.ipadx = 2;
         gridBagConstraints.ipady = 2;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 8, 0);
         jPanel3.add(fieldPassword, gridBagConstraints);
-
-        divider1.setBackground(new java.awt.Color(250, 250, 250));
-        divider1.setMaximumSize(new java.awt.Dimension(300, 16));
-        divider1.setMinimumSize(new java.awt.Dimension(300, 16));
-        divider1.setPreferredSize(new java.awt.Dimension(300, 16));
-
-        javax.swing.GroupLayout divider1Layout = new javax.swing.GroupLayout(divider1);
-        divider1.setLayout(divider1Layout);
-        divider1Layout.setHorizontalGroup(
-            divider1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-        divider1Layout.setVerticalGroup(
-            divider1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 16, Short.MAX_VALUE)
-        );
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        jPanel3.add(divider1, gridBagConstraints);
-
-        divider2.setBackground(new java.awt.Color(250, 250, 250));
-        divider2.setMaximumSize(new java.awt.Dimension(300, 16));
-        divider2.setMinimumSize(new java.awt.Dimension(300, 16));
-
-        javax.swing.GroupLayout divider2Layout = new javax.swing.GroupLayout(divider2);
-        divider2.setLayout(divider2Layout);
-        divider2Layout.setHorizontalGroup(
-            divider2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-        divider2Layout.setVerticalGroup(
-            divider2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 16, Short.MAX_VALUE)
-        );
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
-        jPanel3.add(divider2, gridBagConstraints);
-
-        smallDivider2.setBackground(new java.awt.Color(250, 250, 250));
-        smallDivider2.setMaximumSize(new java.awt.Dimension(300, 8));
-        smallDivider2.setMinimumSize(new java.awt.Dimension(300, 8));
-
-        javax.swing.GroupLayout smallDivider2Layout = new javax.swing.GroupLayout(smallDivider2);
-        smallDivider2.setLayout(smallDivider2Layout);
-        smallDivider2Layout.setHorizontalGroup(
-            smallDivider2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-        smallDivider2Layout.setVerticalGroup(
-            smallDivider2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 8, Short.MAX_VALUE)
-        );
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        jPanel3.add(smallDivider2, gridBagConstraints);
-
-        smallDivider1.setBackground(new java.awt.Color(250, 250, 250));
-        smallDivider1.setMaximumSize(new java.awt.Dimension(300, 8));
-        smallDivider1.setMinimumSize(new java.awt.Dimension(300, 8));
-        smallDivider1.setPreferredSize(new java.awt.Dimension(300, 8));
-
-        javax.swing.GroupLayout smallDivider1Layout = new javax.swing.GroupLayout(smallDivider1);
-        smallDivider1.setLayout(smallDivider1Layout);
-        smallDivider1Layout.setHorizontalGroup(
-            smallDivider1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-        smallDivider1Layout.setVerticalGroup(
-            smallDivider1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 8, Short.MAX_VALUE)
-        );
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        jPanel3.add(smallDivider1, gridBagConstraints);
 
         panelCreateAccount.setBackground(new java.awt.Color(250, 250, 250));
         panelCreateAccount.setMaximumSize(new java.awt.Dimension(250, 30));
@@ -230,7 +149,7 @@ public class Login extends javax.swing.JPanel {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridy = 7;
         jPanel3.add(panelCreateAccount, gridBagConstraints);
 
         panelPasswordReset1.setBackground(new java.awt.Color(250, 250, 250));
@@ -251,8 +170,23 @@ public class Login extends javax.swing.JPanel {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 16, 0);
         jPanel3.add(panelPasswordReset1, gridBagConstraints);
+
+        jCheckBox1.setForeground(new java.awt.Color(51, 51, 51));
+        jCheckBox1.setText("Recordarme");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(8, 24, 0, 21);
+        jPanel3.add(jCheckBox1, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -275,13 +209,16 @@ public class Login extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldEmailActionPerformed
 
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
-    private javax.swing.JPanel divider1;
-    private javax.swing.JPanel divider2;
     private javax.swing.JTextField fieldEmail;
     private javax.swing.JPasswordField fieldPassword;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel labelEmail;
@@ -293,7 +230,5 @@ public class Login extends javax.swing.JPanel {
     private javax.swing.JLabel labelResetPassword1;
     private javax.swing.JPanel panelCreateAccount;
     private javax.swing.JPanel panelPasswordReset1;
-    private javax.swing.JPanel smallDivider1;
-    private javax.swing.JPanel smallDivider2;
     // End of variables declaration//GEN-END:variables
 }
