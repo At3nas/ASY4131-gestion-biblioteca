@@ -1,6 +1,8 @@
 package librosfera.vista;
 
 public class Inicio extends javax.swing.JFrame {
+    // Crea página de Login
+    Login panelLogin = new Login();
 
     // Página de Inicio
     public Inicio() {
@@ -8,6 +10,13 @@ public class Inicio extends javax.swing.JFrame {
         
         // Permite que la app se ejecute en pantalla maximizada
         setExtendedState(Inicio.MAXIMIZED_BOTH);
+        
+        // Agregar panel de Login al panel de contenido
+        panelLogin.setSize(900, 650);
+        panelLogin.setLocation(0, 0);
+        panelContent.add(panelLogin);
+        
+        
     }
 
     /**
@@ -18,59 +27,48 @@ public class Inicio extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         panelBackground = new javax.swing.JPanel();
-        panelCard = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        labelWelcome = new javax.swing.JLabel();
+        panelContent = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 153));
-        setMaximumSize(new java.awt.Dimension(270, 1024));
-        setMinimumSize(new java.awt.Dimension(270, 1024));
-        setPreferredSize(new java.awt.Dimension(270, 1024));
+        setMaximumSize(new java.awt.Dimension(1400, 728));
+        setMinimumSize(new java.awt.Dimension(1400, 728));
+        setPreferredSize(new java.awt.Dimension(1400, 728));
 
-        panelCard.setBackground(new java.awt.Color(255, 255, 255));
-        panelCard.setMaximumSize(new java.awt.Dimension(650, 530));
-        panelCard.setMinimumSize(new java.awt.Dimension(650, 530));
-        panelCard.setPreferredSize(new java.awt.Dimension(650, 530));
+        panelBackground.setMaximumSize(new java.awt.Dimension(1400, 728));
+        panelBackground.setMinimumSize(new java.awt.Dimension(1400, 728));
+        panelBackground.setPreferredSize(new java.awt.Dimension(1400, 728));
+        panelBackground.setLayout(new java.awt.GridBagLayout());
 
-        javax.swing.GroupLayout panelCardLayout = new javax.swing.GroupLayout(panelCard);
-        panelCard.setLayout(panelCardLayout);
-        panelCardLayout.setHorizontalGroup(
-            panelCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 954, Short.MAX_VALUE)
+        labelWelcome.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        labelWelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelWelcome.setText("¡Te damos la bienvenida a Librosfera!");
+        panelBackground.add(labelWelcome, new java.awt.GridBagConstraints());
+
+        panelContent.setBackground(new java.awt.Color(255, 255, 255));
+        panelContent.setMaximumSize(new java.awt.Dimension(900, 650));
+        panelContent.setMinimumSize(new java.awt.Dimension(900, 650));
+        panelContent.setPreferredSize(new java.awt.Dimension(900, 650));
+
+        javax.swing.GroupLayout panelContentLayout = new javax.swing.GroupLayout(panelContent);
+        panelContent.setLayout(panelContentLayout);
+        panelContentLayout.setHorizontalGroup(
+            panelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        panelCardLayout.setVerticalGroup(
-            panelCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+        panelContentLayout.setVerticalGroup(
+            panelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("¡Bienvenida a Librosfera!");
-
-        javax.swing.GroupLayout panelBackgroundLayout = new javax.swing.GroupLayout(panelBackground);
-        panelBackground.setLayout(panelBackgroundLayout);
-        panelBackgroundLayout.setHorizontalGroup(
-            panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBackgroundLayout.createSequentialGroup()
-                .addGroup(panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelBackgroundLayout.createSequentialGroup()
-                        .addGap(463, 463, 463)
-                        .addComponent(jLabel1))
-                    .addGroup(panelBackgroundLayout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(panelCard, javax.swing.GroupLayout.PREFERRED_SIZE, 954, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(195, Short.MAX_VALUE))
-        );
-        panelBackgroundLayout.setVerticalGroup(
-            panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBackgroundLayout.createSequentialGroup()
-                .addContainerGap(36, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(panelCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        panelBackground.add(panelContent, gridBagConstraints);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,7 +79,6 @@ public class Inicio extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(panelBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -125,8 +122,8 @@ public class Inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel labelWelcome;
     private javax.swing.JPanel panelBackground;
-    private javax.swing.JPanel panelCard;
+    private javax.swing.JPanel panelContent;
     // End of variables declaration//GEN-END:variables
 }
