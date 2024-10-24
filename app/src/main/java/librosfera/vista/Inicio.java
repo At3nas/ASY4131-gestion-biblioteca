@@ -1,22 +1,22 @@
 package librosfera.vista;
 
 public class Inicio extends javax.swing.JFrame {
+
     // Crea página de Login
     Login panelLogin = new Login();
 
     // Página de Inicio
     public Inicio() {
         initComponents();
-        
+
         // Permite que la app se ejecute en pantalla maximizada
         setExtendedState(Inicio.MAXIMIZED_BOTH);
-        
+
         // Agregar panel de Login al panel de contenido
         panelLogin.setSize(900, 650);
         panelLogin.setLocation(0, 0);
         panelContent.add(panelLogin);
-        
-        
+
     }
 
     /**
@@ -39,20 +39,25 @@ public class Inicio extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1400, 728));
         setPreferredSize(new java.awt.Dimension(1400, 728));
 
+        panelBackground.setBackground(new java.awt.Color(225, 176, 109));
         panelBackground.setMaximumSize(new java.awt.Dimension(1400, 728));
         panelBackground.setMinimumSize(new java.awt.Dimension(1400, 728));
         panelBackground.setPreferredSize(new java.awt.Dimension(1400, 728));
         panelBackground.setLayout(new java.awt.GridBagLayout());
 
         labelWelcome.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        labelWelcome.setForeground(new java.awt.Color(58, 33, 36));
         labelWelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelWelcome.setText("¡Te damos la bienvenida a Librosfera!");
-        panelBackground.add(labelWelcome, new java.awt.GridBagConstraints());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 16, 0);
+        panelBackground.add(labelWelcome, gridBagConstraints);
 
-        panelContent.setBackground(new java.awt.Color(255, 255, 255));
-        panelContent.setMaximumSize(new java.awt.Dimension(900, 650));
-        panelContent.setMinimumSize(new java.awt.Dimension(900, 650));
-        panelContent.setPreferredSize(new java.awt.Dimension(900, 650));
+        panelContent.setBackground(new java.awt.Color(250, 250, 250));
+        panelContent.setMaximumSize(new java.awt.Dimension(900, 500));
+        panelContent.setMinimumSize(new java.awt.Dimension(900, 500));
+        panelContent.setPreferredSize(new java.awt.Dimension(900, 500));
+        panelContent.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout panelContentLayout = new javax.swing.GroupLayout(panelContent);
         panelContent.setLayout(panelContentLayout);
@@ -67,7 +72,7 @@ public class Inicio extends javax.swing.JFrame {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 1;
         panelBackground.add(panelContent, gridBagConstraints);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -85,7 +90,7 @@ public class Inicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     /**
      * @param args the command line arguments
      */

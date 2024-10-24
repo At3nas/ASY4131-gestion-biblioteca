@@ -66,9 +66,13 @@ public class Login extends javax.swing.JPanel {
         labelEmail.setForeground(new java.awt.Color(51, 51, 51));
         labelEmail.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         labelEmail.setText("Correo electrónico");
+        labelEmail.setMaximumSize(new java.awt.Dimension(350, 16));
+        labelEmail.setMinimumSize(new java.awt.Dimension(350, 16));
+        labelEmail.setPreferredSize(new java.awt.Dimension(350, 16));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 4, 0);
         jPanel3.add(labelEmail, gridBagConstraints);
 
@@ -77,9 +81,9 @@ public class Login extends javax.swing.JPanel {
         fieldEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fieldEmail.setBorder(null);
         fieldEmail.setMargin(new java.awt.Insets(2, 6, 16, 6));
-        fieldEmail.setMaximumSize(new java.awt.Dimension(200, 30));
-        fieldEmail.setMinimumSize(new java.awt.Dimension(200, 30));
-        fieldEmail.setPreferredSize(new java.awt.Dimension(200, 30));
+        fieldEmail.setMaximumSize(new java.awt.Dimension(350, 30));
+        fieldEmail.setMinimumSize(new java.awt.Dimension(350, 30));
+        fieldEmail.setPreferredSize(new java.awt.Dimension(350, 30));
         fieldEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldEmailActionPerformed(evt);
@@ -98,9 +102,13 @@ public class Login extends javax.swing.JPanel {
         labelPassword.setForeground(new java.awt.Color(51, 51, 51));
         labelPassword.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         labelPassword.setText("Contraseña");
+        labelPassword.setMaximumSize(new java.awt.Dimension(350, 16));
+        labelPassword.setMinimumSize(new java.awt.Dimension(350, 16));
+        labelPassword.setPreferredSize(new java.awt.Dimension(350, 16));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 4, 0);
         jPanel3.add(labelPassword, gridBagConstraints);
 
@@ -116,13 +124,14 @@ public class Login extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         jPanel3.add(btnLogin, gridBagConstraints);
 
         fieldPassword.setBackground(new java.awt.Color(238, 238, 238));
         fieldPassword.setBorder(null);
-        fieldPassword.setMaximumSize(new java.awt.Dimension(200, 30));
-        fieldPassword.setMinimumSize(new java.awt.Dimension(200, 30));
-        fieldPassword.setPreferredSize(new java.awt.Dimension(200, 30));
+        fieldPassword.setMaximumSize(new java.awt.Dimension(350, 30));
+        fieldPassword.setMinimumSize(new java.awt.Dimension(350, 30));
+        fieldPassword.setPreferredSize(new java.awt.Dimension(350, 30));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
@@ -145,11 +154,13 @@ public class Login extends javax.swing.JPanel {
 
         labelResetPassword.setForeground(new java.awt.Color(0, 51, 153));
         labelResetPassword.setText("Regístrate");
+        labelResetPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         panelCreateAccount.add(labelResetPassword, new java.awt.GridBagConstraints());
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         jPanel3.add(panelCreateAccount, gridBagConstraints);
 
         panelPasswordReset1.setBackground(new java.awt.Color(250, 250, 250));
@@ -162,20 +173,27 @@ public class Login extends javax.swing.JPanel {
         labelForgotPassword1.setText("¿Olvidaste tu contraseña?");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.ipadx = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         panelPasswordReset1.add(labelForgotPassword1, gridBagConstraints);
 
         labelResetPassword1.setForeground(new java.awt.Color(0, 51, 153));
         labelResetPassword1.setText("Recupérala");
-        panelPasswordReset1.add(labelResetPassword1, new java.awt.GridBagConstraints());
+        labelResetPassword1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        panelPasswordReset1.add(labelResetPassword1, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 16, 0);
         jPanel3.add(panelPasswordReset1, gridBagConstraints);
 
         jCheckBox1.setForeground(new java.awt.Color(51, 51, 51));
         jCheckBox1.setText("Recordarme");
+        jCheckBox1.setMaximumSize(new java.awt.Dimension(350, 16));
+        jCheckBox1.setMinimumSize(new java.awt.Dimension(350, 16));
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox1ActionPerformed(evt);
@@ -185,7 +203,7 @@ public class Login extends javax.swing.JPanel {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(8, 24, 0, 21);
+        gridBagConstraints.insets = new java.awt.Insets(8, 0, 0, 21);
         jPanel3.add(jCheckBox1, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
