@@ -20,11 +20,11 @@ public class App extends javax.swing.JFrame {
         java.awt.GridBagConstraints gridBagConstraints;
 
         panelSidebar = new javax.swing.JPanel();
-        imgLogo = new javax.swing.JLabel();
+        labelLogo = new javax.swing.JLabel();
         panelNavItems = new javax.swing.JPanel();
         labelDashboard = new javax.swing.JLabel();
         labelExplore = new javax.swing.JLabel();
-        labelHistory1 = new javax.swing.JLabel();
+        labelHistory = new javax.swing.JLabel();
         labelLibrary = new javax.swing.JLabel();
         panelContent = new javax.swing.JPanel();
 
@@ -43,17 +43,16 @@ public class App extends javax.swing.JFrame {
         panelSidebarLayout.rowHeights = new int[] {0, 16, 0};
         panelSidebar.setLayout(panelSidebarLayout);
 
-        imgLogo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        imgLogo.setForeground(new java.awt.Color(250, 250, 250));
-        imgLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librosfera/icons/temporal-logo.png"))); // NOI18N
-        imgLogo.setText("Librosfera");
-        imgLogo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        imgLogo.setIconTextGap(8);
-        imgLogo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        labelLogo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        labelLogo.setForeground(new java.awt.Color(250, 250, 250));
+        labelLogo.setText("Librosfera");
+        labelLogo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        labelLogo.setIconTextGap(8);
+        labelLogo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        panelSidebar.add(imgLogo, gridBagConstraints);
+        panelSidebar.add(labelLogo, gridBagConstraints);
 
         panelNavItems.setBackground(new java.awt.Color(58, 33, 36));
         panelNavItems.setForeground(new java.awt.Color(255, 255, 255));
@@ -62,12 +61,11 @@ public class App extends javax.swing.JFrame {
         panelNavItems.setPreferredSize(new java.awt.Dimension(240, 400));
         java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
         jPanel1Layout.columnWidths = new int[] {0};
-        jPanel1Layout.rowHeights = new int[] {0, 24, 0, 24, 0, 24, 0, 24, 0};
+        jPanel1Layout.rowHeights = new int[] {0, 24, 0, 24, 0, 24, 0};
         panelNavItems.setLayout(jPanel1Layout);
 
         labelDashboard.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         labelDashboard.setForeground(new java.awt.Color(250, 250, 250));
-        labelDashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librosfera/icons/house.png"))); // NOI18N
         labelDashboard.setText("Dashboard");
         labelDashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         labelDashboard.setIconTextGap(8);
@@ -79,32 +77,33 @@ public class App extends javax.swing.JFrame {
 
         labelExplore.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         labelExplore.setForeground(new java.awt.Color(250, 250, 250));
-        labelExplore.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librosfera/icons/search.png"))); // NOI18N
         labelExplore.setText("Explorar");
         labelExplore.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        labelExplore.setEnabled(false);
         labelExplore.setIconTextGap(8);
+        labelExplore.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                navigateExplore(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         panelNavItems.add(labelExplore, gridBagConstraints);
 
-        labelHistory1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        labelHistory1.setForeground(new java.awt.Color(250, 250, 250));
-        labelHistory1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librosfera/icons/history.png"))); // NOI18N
-        labelHistory1.setText("Historial");
-        labelHistory1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        labelHistory1.setIconTextGap(8);
+        labelHistory.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        labelHistory.setForeground(new java.awt.Color(250, 250, 250));
+        labelHistory.setText("Historial");
+        labelHistory.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        labelHistory.setIconTextGap(8);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        panelNavItems.add(labelHistory1, gridBagConstraints);
+        panelNavItems.add(labelHistory, gridBagConstraints);
 
         labelLibrary.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         labelLibrary.setForeground(new java.awt.Color(250, 250, 250));
-        labelLibrary.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librosfera/icons/library.png"))); // NOI18N
         labelLibrary.setText("Biblioteca");
         labelLibrary.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         labelLibrary.setEnabled(false);
@@ -112,6 +111,7 @@ public class App extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         panelNavItems.add(labelLibrary, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -144,6 +144,24 @@ public class App extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void navigateExplore(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navigateExplore
+        // Renderizar la vista Explorar
+        
+        // Crear la vista Explorar
+        Explorar vistaExplorar = new Explorar();
+        
+        // Establecer los tamaños
+        vistaExplorar.setSize(1170, 728);
+        vistaExplorar.setLocation(0, 0);
+        
+        // Limpiar el panel de contenido, añadir la vista y refrescarla
+        panelContent.removeAll();
+        panelContent.add(vistaExplorar);
+        panelContent.revalidate();
+        panelContent.repaint();
+
+    }//GEN-LAST:event_navigateExplore
 
     /**
      * @param args the command line arguments
@@ -181,11 +199,11 @@ public class App extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel imgLogo;
     private javax.swing.JLabel labelDashboard;
     private javax.swing.JLabel labelExplore;
-    private javax.swing.JLabel labelHistory1;
+    private javax.swing.JLabel labelHistory;
     private javax.swing.JLabel labelLibrary;
+    private javax.swing.JLabel labelLogo;
     private javax.swing.JPanel panelContent;
     private javax.swing.JPanel panelNavItems;
     private javax.swing.JPanel panelSidebar;

@@ -13,7 +13,7 @@ public class Inicio extends javax.swing.JFrame {
         setExtendedState(Inicio.MAXIMIZED_BOTH);
 
         // Agregar panel de Login al panel de contenido
-        panelLogin.setSize(900, 650);
+        panelLogin.setSize(1200, 650);
         panelLogin.setLocation(0, 0);
         panelContent.add(panelLogin);
 
@@ -30,7 +30,6 @@ public class Inicio extends javax.swing.JFrame {
         java.awt.GridBagConstraints gridBagConstraints;
 
         panelBackground = new javax.swing.JPanel();
-        labelWelcome = new javax.swing.JLabel();
         panelContent = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,18 +44,10 @@ public class Inicio extends javax.swing.JFrame {
         panelBackground.setPreferredSize(new java.awt.Dimension(1400, 728));
         panelBackground.setLayout(new java.awt.GridBagLayout());
 
-        labelWelcome.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        labelWelcome.setForeground(new java.awt.Color(58, 33, 36));
-        labelWelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelWelcome.setText("¡Te damos la bienvenida a Librosfera!");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 16, 0);
-        panelBackground.add(labelWelcome, gridBagConstraints);
-
         panelContent.setBackground(new java.awt.Color(250, 250, 250));
-        panelContent.setMaximumSize(new java.awt.Dimension(900, 500));
-        panelContent.setMinimumSize(new java.awt.Dimension(900, 500));
-        panelContent.setPreferredSize(new java.awt.Dimension(900, 500));
+        panelContent.setMaximumSize(new java.awt.Dimension(1200, 650));
+        panelContent.setMinimumSize(new java.awt.Dimension(1200, 650));
+        panelContent.setPreferredSize(new java.awt.Dimension(1200, 650));
         panelContent.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout panelContentLayout = new javax.swing.GroupLayout(panelContent);
@@ -127,7 +118,6 @@ public class Inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel labelWelcome;
     private javax.swing.JPanel panelBackground;
     private javax.swing.JPanel panelContent;
     // End of variables declaration//GEN-END:variables
