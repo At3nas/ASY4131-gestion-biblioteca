@@ -16,6 +16,9 @@ public class Inicio extends javax.swing.JFrame {
         panelLogin.setSize(1200, 650);
         panelLogin.setLocation(0, 0);
         panelContent.add(panelLogin);
+        
+        System.out.println(panelLogin.getComponent(0).getMouseListeners().length);
+       
 
     }
 
@@ -38,7 +41,7 @@ public class Inicio extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1400, 728));
         setPreferredSize(new java.awt.Dimension(1400, 728));
 
-        panelBackground.setBackground(new java.awt.Color(225, 176, 109));
+        panelBackground.setBackground(new java.awt.Color(58, 33, 36));
         panelBackground.setMaximumSize(new java.awt.Dimension(1400, 728));
         panelBackground.setMinimumSize(new java.awt.Dimension(1400, 728));
         panelBackground.setPreferredSize(new java.awt.Dimension(1400, 728));

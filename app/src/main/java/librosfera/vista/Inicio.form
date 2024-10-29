@@ -51,7 +51,7 @@
     <Container class="javax.swing.JPanel" name="panelBackground">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="6d" green="b0" red="e1" type="rgb"/>
+          <Color blue="24" green="21" red="3a" type="rgb"/>
         </Property>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[1400, 728]"/>

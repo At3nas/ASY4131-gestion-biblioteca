@@ -22,7 +22,7 @@ public class Register extends javax.swing.JPanel {
         panelImg = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         panelRegister = new javax.swing.JPanel();
-        panelLoginForm = new javax.swing.JPanel();
+        panelRegisterForm = new javax.swing.JPanel();
         panelEmail = new javax.swing.JPanel();
         labelEmail = new javax.swing.JLabel();
         fieldEmail = new javax.swing.JTextField();
@@ -36,6 +36,12 @@ public class Register extends javax.swing.JPanel {
         panelHeader = new javax.swing.JPanel();
         labelLoginTitle = new javax.swing.JLabel();
         labelLoginSubtitle = new javax.swing.JLabel();
+        panelEmail1 = new javax.swing.JPanel();
+        labelEmail1 = new javax.swing.JLabel();
+        fieldEmail1 = new javax.swing.JTextField();
+        panelEmail2 = new javax.swing.JPanel();
+        labelEmail2 = new javax.swing.JLabel();
+        fieldEmail2 = new javax.swing.JTextField();
 
         setMaximumSize(new java.awt.Dimension(1200, 650));
         setMinimumSize(new java.awt.Dimension(1200, 650));
@@ -55,14 +61,14 @@ public class Register extends javax.swing.JPanel {
         panelRegister.setMaximumSize(new java.awt.Dimension(700, 252));
         panelRegister.setLayout(new java.awt.GridBagLayout());
 
-        panelLoginForm.setBackground(new java.awt.Color(250, 250, 250));
-        panelLoginForm.setMaximumSize(new java.awt.Dimension(550, 400));
-        panelLoginForm.setMinimumSize(new java.awt.Dimension(550, 400));
-        panelLoginForm.setPreferredSize(new java.awt.Dimension(550, 400));
+        panelRegisterForm.setBackground(new java.awt.Color(250, 250, 250));
+        panelRegisterForm.setMaximumSize(new java.awt.Dimension(550, 500));
+        panelRegisterForm.setMinimumSize(new java.awt.Dimension(550, 500));
+        panelRegisterForm.setPreferredSize(new java.awt.Dimension(550, 500));
         java.awt.GridBagLayout panelLoginFormLayout = new java.awt.GridBagLayout();
-        panelLoginFormLayout.columnWidths = new int[] {0, 0, 0};
-        panelLoginFormLayout.rowHeights = new int[] {0, 16, 0, 16, 0, 16, 0, 16, 0, 16, 0};
-        panelLoginForm.setLayout(panelLoginFormLayout);
+        panelLoginFormLayout.columnWidths = new int[] {0};
+        panelLoginFormLayout.rowHeights = new int[] {0, 16, 0, 16, 0, 16, 0, 16, 0, 16, 0, 16, 0, 16, 0};
+        panelRegisterForm.setLayout(panelLoginFormLayout);
 
         panelEmail.setBackground(new java.awt.Color(250, 250, 250));
         java.awt.GridBagLayout panelEmailLayout = new java.awt.GridBagLayout();
@@ -74,7 +80,7 @@ public class Register extends javax.swing.JPanel {
         labelEmail.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         labelEmail.setForeground(new java.awt.Color(51, 51, 51));
         labelEmail.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        labelEmail.setText("Correo electrónico");
+        labelEmail.setText("Apellido");
         labelEmail.setMaximumSize(new java.awt.Dimension(350, 16));
         labelEmail.setMinimumSize(new java.awt.Dimension(350, 16));
         labelEmail.setPreferredSize(new java.awt.Dimension(350, 16));
@@ -97,9 +103,8 @@ public class Register extends javax.swing.JPanel {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        panelLoginForm.add(panelEmail, gridBagConstraints);
+        gridBagConstraints.gridy = 4;
+        panelRegisterForm.add(panelEmail, gridBagConstraints);
 
         panelPassword.setBackground(new java.awt.Color(250, 250, 250));
         java.awt.GridBagLayout panelPasswordLayout = new java.awt.GridBagLayout();
@@ -141,9 +146,9 @@ public class Register extends javax.swing.JPanel {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        panelLoginForm.add(panelPassword, gridBagConstraints);
+        panelRegisterForm.add(panelPassword, gridBagConstraints);
 
         btnRegister.setBackground(new java.awt.Color(135, 23, 35));
         btnRegister.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -161,8 +166,8 @@ public class Register extends javax.swing.JPanel {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        panelLoginForm.add(btnRegister, gridBagConstraints);
+        gridBagConstraints.gridy = 12;
+        panelRegisterForm.add(btnRegister, gridBagConstraints);
 
         panelCreateAccount.setBackground(new java.awt.Color(250, 250, 250));
         panelCreateAccount.setMaximumSize(new java.awt.Dimension(200, 30));
@@ -183,8 +188,8 @@ public class Register extends javax.swing.JPanel {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
-        panelLoginForm.add(panelCreateAccount, gridBagConstraints);
+        gridBagConstraints.gridy = 14;
+        panelRegisterForm.add(panelCreateAccount, gridBagConstraints);
 
         panelHeader.setBackground(new java.awt.Color(250, 250, 250));
         java.awt.GridBagLayout panelHeaderLayout = new java.awt.GridBagLayout();
@@ -211,9 +216,76 @@ public class Register extends javax.swing.JPanel {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 32, 0);
-        panelLoginForm.add(panelHeader, gridBagConstraints);
+        panelRegisterForm.add(panelHeader, gridBagConstraints);
 
-        panelRegister.add(panelLoginForm, new java.awt.GridBagConstraints());
+        panelEmail1.setBackground(new java.awt.Color(250, 250, 250));
+        panelEmail1.setLayout(new java.awt.GridBagLayout());
+
+        labelEmail1.setBackground(new java.awt.Color(51, 51, 51));
+        labelEmail1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        labelEmail1.setForeground(new java.awt.Color(51, 51, 51));
+        labelEmail1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelEmail1.setText("Correo electrónico");
+        labelEmail1.setMaximumSize(new java.awt.Dimension(350, 16));
+        labelEmail1.setMinimumSize(new java.awt.Dimension(350, 16));
+        labelEmail1.setPreferredSize(new java.awt.Dimension(350, 16));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = -101;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        panelEmail1.add(labelEmail1, gridBagConstraints);
+
+        fieldEmail1.setBackground(new java.awt.Color(238, 238, 238));
+        fieldEmail1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 238, 238), 1, true));
+        fieldEmail1.setMaximumSize(new java.awt.Dimension(400, 30));
+        fieldEmail1.setMinimumSize(new java.awt.Dimension(400, 30));
+        fieldEmail1.setPreferredSize(new java.awt.Dimension(400, 30));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        panelEmail1.add(fieldEmail1, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        panelRegisterForm.add(panelEmail1, gridBagConstraints);
+
+        panelEmail2.setBackground(new java.awt.Color(250, 250, 250));
+        panelEmail2.setLayout(new java.awt.GridBagLayout());
+
+        labelEmail2.setBackground(new java.awt.Color(51, 51, 51));
+        labelEmail2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        labelEmail2.setForeground(new java.awt.Color(51, 51, 51));
+        labelEmail2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelEmail2.setText("Nombre");
+        labelEmail2.setMaximumSize(new java.awt.Dimension(350, 16));
+        labelEmail2.setMinimumSize(new java.awt.Dimension(350, 16));
+        labelEmail2.setPreferredSize(new java.awt.Dimension(350, 16));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = -101;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        panelEmail2.add(labelEmail2, gridBagConstraints);
+
+        fieldEmail2.setBackground(new java.awt.Color(238, 238, 238));
+        fieldEmail2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 238, 238), 1, true));
+        fieldEmail2.setMaximumSize(new java.awt.Dimension(400, 30));
+        fieldEmail2.setMinimumSize(new java.awt.Dimension(400, 30));
+        fieldEmail2.setPreferredSize(new java.awt.Dimension(400, 30));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        panelEmail2.add(fieldEmail2, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        panelRegisterForm.add(panelEmail2, gridBagConstraints);
+
+        panelRegister.add(panelRegisterForm, new java.awt.GridBagConstraints());
 
         add(panelRegister);
     }// </editor-fold>//GEN-END:initComponents
@@ -232,20 +304,26 @@ public class Register extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegister;
     private javax.swing.JTextField fieldEmail;
+    private javax.swing.JTextField fieldEmail1;
+    private javax.swing.JTextField fieldEmail2;
     private javax.swing.JPasswordField fieldPassword;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel labelAccountExists;
     private javax.swing.JLabel labelEmail;
+    private javax.swing.JLabel labelEmail1;
+    private javax.swing.JLabel labelEmail2;
     private javax.swing.JLabel labelLogin;
     private javax.swing.JLabel labelLoginSubtitle;
     private javax.swing.JLabel labelLoginTitle;
     private javax.swing.JLabel labelPassword;
     private javax.swing.JPanel panelCreateAccount;
     private javax.swing.JPanel panelEmail;
+    private javax.swing.JPanel panelEmail1;
+    private javax.swing.JPanel panelEmail2;
     private javax.swing.JPanel panelHeader;
     private javax.swing.JPanel panelImg;
-    private javax.swing.JPanel panelLoginForm;
     private javax.swing.JPanel panelPassword;
     private javax.swing.JPanel panelRegister;
+    private javax.swing.JPanel panelRegisterForm;
     // End of variables declaration//GEN-END:variables
 }

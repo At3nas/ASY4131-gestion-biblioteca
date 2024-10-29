@@ -233,6 +233,11 @@ public class Login extends javax.swing.JPanel {
         labelResetPassword.setForeground(new java.awt.Color(0, 51, 153));
         labelResetPassword.setText("Regístrate");
         labelResetPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        labelResetPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelResetPasswordMouseClicked(evt);
+            }
+        });
         panelCreateAccount.add(labelResetPassword, new java.awt.GridBagConstraints());
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -294,6 +299,13 @@ public class Login extends javax.swing.JPanel {
         App frameHome = new App();
         frameHome.setVisible(true);
     }//GEN-LAST:event_btnLoginMouseClicked
+    
+    // Ingresar
+    private void labelResetPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelResetPasswordMouseClicked
+        // Agregar panel de Register al panel de contenido
+        Register panelRegister = new Register();
+        
+    }//GEN-LAST:event_labelResetPasswordMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
