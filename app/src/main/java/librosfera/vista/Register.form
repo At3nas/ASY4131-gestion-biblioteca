@@ -87,7 +87,7 @@
             </Constraint>
           </Constraints>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="panelEmail">
+            <Container class="javax.swing.JPanel" name="panelLastName">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="fa" green="fa" red="fa" type="rgb"/>
@@ -99,7 +99,7 @@
                 </Constraint>
               </Constraints>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="labelEmail">
+                <Component class="javax.swing.JLabel" name="labelLastName">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="33" red="33" type="rgb"/>
@@ -111,6 +111,9 @@
                       <Color blue="33" green="33" red="33" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
+                    <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                      <ComponentRef name="fieldLastName"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Apellido"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[350, 16]"/>
@@ -128,7 +131,7 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="javax.swing.JTextField" name="fieldEmail">
+                <Component class="javax.swing.JTextField" name="fieldLastName">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ee" green="ee" red="ee" type="rgb"/>
@@ -202,11 +205,11 @@
                   </Parameters>
                 </CodeStatement>
                 <CodeStatement>
-                  <CodeExpression id="4_panelEmail">
-                    <CodeVariable name="panelEmail" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="4_panelLastName">
+                    <CodeVariable name="panelLastName" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="panelEmail"/>
+                        <ComponentRef name="panelLastName"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -283,16 +286,16 @@
                   </Parameters>
                 </CodeStatement>
                 <CodeStatement>
-                  <CodeExpression id="4_panelEmail"/>
+                  <CodeExpression id="4_panelLastName"/>
                   <StatementProvider type="CodeMethod">
                     <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
                   </StatementProvider>
                   <Parameters>
-                    <CodeExpression id="10_labelEmail">
-                      <CodeVariable name="labelEmail" type="8194" declaredType="javax.swing.JLabel"/>
+                    <CodeExpression id="10_labelLastName">
+                      <CodeVariable name="labelLastName" type="8194" declaredType="javax.swing.JLabel"/>
                       <ExpressionOrigin>
                         <ExpressionProvider type="ComponentRef">
-                          <ComponentRef name="labelEmail"/>
+                          <ComponentRef name="labelLastName"/>
                         </ExpressionProvider>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -339,16 +342,16 @@
                   </Parameters>
                 </CodeStatement>
                 <CodeStatement>
-                  <CodeExpression id="4_panelEmail"/>
+                  <CodeExpression id="4_panelLastName"/>
                   <StatementProvider type="CodeMethod">
                     <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
                   </StatementProvider>
                   <Parameters>
-                    <CodeExpression id="14_fieldEmail">
-                      <CodeVariable name="fieldEmail" type="8194" declaredType="javax.swing.JTextField"/>
+                    <CodeExpression id="14_fieldLastName">
+                      <CodeVariable name="fieldLastName" type="8194" declaredType="javax.swing.JTextField"/>
                       <ExpressionOrigin>
                         <ExpressionProvider type="ComponentRef">
-                          <ComponentRef name="fieldEmail"/>
+                          <ComponentRef name="fieldLastName"/>
                         </ExpressionProvider>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -381,6 +384,9 @@
                       <Color blue="33" green="33" red="33" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
+                    <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                      <ComponentRef name="fieldPassword"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Contrase&#xf1;a"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[350, 16]"/>
@@ -955,7 +961,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="panelEmail1">
+            <Container class="javax.swing.JPanel" name="panelEmail">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="fa" green="fa" red="fa" type="rgb"/>
@@ -967,7 +973,7 @@
                 </Constraint>
               </Constraints>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="labelEmail1">
+                <Component class="javax.swing.JLabel" name="labelEmail">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="33" red="33" type="rgb"/>
@@ -979,6 +985,9 @@
                       <Color blue="33" green="33" red="33" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
+                    <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                      <ComponentRef name="fieldEmail"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Correo electr&#xf3;nico"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[350, 16]"/>
@@ -996,7 +1005,7 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="javax.swing.JTextField" name="fieldEmail1">
+                <Component class="javax.swing.JTextField" name="fieldEmail">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ee" green="ee" red="ee" type="rgb"/>
@@ -1027,11 +1036,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="42_panelEmail1">
-                    <CodeVariable name="panelEmail1" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="42_panelEmail">
+                    <CodeVariable name="panelEmail" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="panelEmail1"/>
+                        <ComponentRef name="panelEmail"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -1114,16 +1123,16 @@
                   </Parameters>
                 </CodeStatement>
                 <CodeStatement>
-                  <CodeExpression id="42_panelEmail1"/>
+                  <CodeExpression id="42_panelEmail"/>
                   <StatementProvider type="CodeMethod">
                     <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
                   </StatementProvider>
                   <Parameters>
-                    <CodeExpression id="49_labelEmail1">
-                      <CodeVariable name="labelEmail1" type="8194" declaredType="javax.swing.JLabel"/>
+                    <CodeExpression id="49_labelEmail">
+                      <CodeVariable name="labelEmail" type="8194" declaredType="javax.swing.JLabel"/>
                       <ExpressionOrigin>
                         <ExpressionProvider type="ComponentRef">
-                          <ComponentRef name="labelEmail1"/>
+                          <ComponentRef name="labelEmail"/>
                         </ExpressionProvider>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -1170,16 +1179,16 @@
                   </Parameters>
                 </CodeStatement>
                 <CodeStatement>
-                  <CodeExpression id="42_panelEmail1"/>
+                  <CodeExpression id="42_panelEmail"/>
                   <StatementProvider type="CodeMethod">
                     <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
                   </StatementProvider>
                   <Parameters>
-                    <CodeExpression id="53_fieldEmail1">
-                      <CodeVariable name="fieldEmail1" type="8194" declaredType="javax.swing.JTextField"/>
+                    <CodeExpression id="53_fieldEmail">
+                      <CodeVariable name="fieldEmail" type="8194" declaredType="javax.swing.JTextField"/>
                       <ExpressionOrigin>
                         <ExpressionProvider type="ComponentRef">
-                          <ComponentRef name="fieldEmail1"/>
+                          <ComponentRef name="fieldEmail"/>
                         </ExpressionProvider>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -1188,7 +1197,7 @@
                 </CodeStatement>
               </LayoutCode>
             </Container>
-            <Container class="javax.swing.JPanel" name="panelEmail2">
+            <Container class="javax.swing.JPanel" name="panelFirstName">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="fa" green="fa" red="fa" type="rgb"/>
@@ -1200,7 +1209,7 @@
                 </Constraint>
               </Constraints>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="labelEmail2">
+                <Component class="javax.swing.JLabel" name="labelFirstName">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="33" red="33" type="rgb"/>
@@ -1212,6 +1221,9 @@
                       <Color blue="33" green="33" red="33" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
+                    <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                      <ComponentRef name="fieldFirstName"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Nombre"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[350, 16]"/>
@@ -1229,7 +1241,7 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="javax.swing.JTextField" name="fieldEmail2">
+                <Component class="javax.swing.JTextField" name="fieldFirstName">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ee" green="ee" red="ee" type="rgb"/>
@@ -1260,11 +1272,11 @@
               </SubComponents>
               <LayoutCode>
                 <CodeStatement>
-                  <CodeExpression id="54_panelEmail2">
-                    <CodeVariable name="panelEmail2" type="8194" declaredType="javax.swing.JPanel"/>
+                  <CodeExpression id="54_panelFirstName">
+                    <CodeVariable name="panelFirstName" type="8194" declaredType="javax.swing.JPanel"/>
                     <ExpressionOrigin>
                       <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="panelEmail2"/>
+                        <ComponentRef name="panelFirstName"/>
                       </ExpressionProvider>
                     </ExpressionOrigin>
                   </CodeExpression>
@@ -1347,16 +1359,16 @@
                   </Parameters>
                 </CodeStatement>
                 <CodeStatement>
-                  <CodeExpression id="54_panelEmail2"/>
+                  <CodeExpression id="54_panelFirstName"/>
                   <StatementProvider type="CodeMethod">
                     <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
                   </StatementProvider>
                   <Parameters>
-                    <CodeExpression id="61_labelEmail2">
-                      <CodeVariable name="labelEmail2" type="8194" declaredType="javax.swing.JLabel"/>
+                    <CodeExpression id="61_labelFirstName">
+                      <CodeVariable name="labelFirstName" type="8194" declaredType="javax.swing.JLabel"/>
                       <ExpressionOrigin>
                         <ExpressionProvider type="ComponentRef">
-                          <ComponentRef name="labelEmail2"/>
+                          <ComponentRef name="labelFirstName"/>
                         </ExpressionProvider>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -1403,16 +1415,16 @@
                   </Parameters>
                 </CodeStatement>
                 <CodeStatement>
-                  <CodeExpression id="54_panelEmail2"/>
+                  <CodeExpression id="54_panelFirstName"/>
                   <StatementProvider type="CodeMethod">
                     <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
                   </StatementProvider>
                   <Parameters>
-                    <CodeExpression id="65_fieldEmail2">
-                      <CodeVariable name="fieldEmail2" type="8194" declaredType="javax.swing.JTextField"/>
+                    <CodeExpression id="65_fieldFirstName">
+                      <CodeVariable name="fieldFirstName" type="8194" declaredType="javax.swing.JTextField"/>
                       <ExpressionOrigin>
                         <ExpressionProvider type="ComponentRef">
-                          <ComponentRef name="fieldEmail2"/>
+                          <ComponentRef name="fieldFirstName"/>
                         </ExpressionProvider>
                       </ExpressionOrigin>
                     </CodeExpression>
@@ -1527,7 +1539,7 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="4_panelEmail"/>
+                <CodeExpression id="4_panelLastName"/>
                 <CodeExpression id="70_gridBagConstraints"/>
               </Parameters>
             </CodeStatement>
@@ -1827,7 +1839,7 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="42_panelEmail1"/>
+                <CodeExpression id="42_panelEmail"/>
                 <CodeExpression id="89_gridBagConstraints"/>
               </Parameters>
             </CodeStatement>
@@ -1876,7 +1888,7 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="54_panelEmail2"/>
+                <CodeExpression id="54_panelFirstName"/>
                 <CodeExpression id="93_gridBagConstraints"/>
               </Parameters>
             </CodeStatement>
