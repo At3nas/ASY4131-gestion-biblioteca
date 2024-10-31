@@ -1,9 +1,11 @@
 package librosfera.vista;
 
+import javax.swing.JPanel;
+
 public class Inicio extends javax.swing.JFrame {
 
-    // Crea página de Login
-    Login panelLogin = new Login();
+    // JFRAMES //
+    App frameApp = new App();
 
     // Página de Inicio
     public Inicio() {
@@ -13,13 +15,18 @@ public class Inicio extends javax.swing.JFrame {
         setExtendedState(Inicio.MAXIMIZED_BOTH);
 
         // Agregar panel de Login al panel de contenido
-        panelLogin.setSize(1200, 650);
-        panelLogin.setLocation(0, 0);
-        panelContent.add(panelLogin);
-        
-        System.out.println(panelLogin.getComponent(0).getMouseListeners().length);
-       
+        panelContainerLogin.setSize(1200, 650);
+        panelContainerLogin.setLocation(0, 0);
+        panelContent.add(panelContainerLogin);
+    }
 
+    public void renderizarVista(JPanel panel) {
+        panel.setSize(1200, 650);
+        panel.setLocation(0, 0);
+        panelContent.removeAll();
+        panelContent.add(panel);
+        panelContent.revalidate();
+        panelContent.repaint();
     }
 
     /**
@@ -32,10 +39,541 @@ public class Inicio extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        panelContainerLogin = new javax.swing.JPanel();
+        panelLogin = new javax.swing.JPanel();
+        panelLoginForm = new javax.swing.JPanel();
+        panelEmail = new javax.swing.JPanel();
+        labelEmail = new javax.swing.JLabel();
+        fieldEmail = new javax.swing.JTextField();
+        panelPasswordOptions = new javax.swing.JPanel();
+        checkboxRememberMe = new javax.swing.JCheckBox();
+        panelPasswordReset1 = new javax.swing.JPanel();
+        labelForgotPassword1 = new javax.swing.JLabel();
+        labelResetPassword1 = new javax.swing.JLabel();
+        panelPassword = new javax.swing.JPanel();
+        labelPassword = new javax.swing.JLabel();
+        fieldPassword = new javax.swing.JPasswordField();
+        btnLogin = new javax.swing.JButton();
+        panelCreateAccount = new javax.swing.JPanel();
+        labelForgotPassword = new javax.swing.JLabel();
+        labelResetPassword = new javax.swing.JLabel();
+        panelHeader = new javax.swing.JPanel();
+        labelLoginTitle = new javax.swing.JLabel();
+        labelLoginSubtitle = new javax.swing.JLabel();
+        panelImg = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        panelContainerRegister = new javax.swing.JPanel();
+        panelImg1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        panelRegister = new javax.swing.JPanel();
+        panelRegisterForm = new javax.swing.JPanel();
+        panelLastName = new javax.swing.JPanel();
+        labelLastName = new javax.swing.JLabel();
+        fieldLastName = new javax.swing.JTextField();
+        panelPassword1 = new javax.swing.JPanel();
+        labelPassword1 = new javax.swing.JLabel();
+        fieldPassword1 = new javax.swing.JPasswordField();
+        btnRegister = new javax.swing.JButton();
+        panelCreateAccount1 = new javax.swing.JPanel();
+        labelAccountExists = new javax.swing.JLabel();
+        labelLogin = new javax.swing.JLabel();
+        panelHeader1 = new javax.swing.JPanel();
+        labelLoginTitle1 = new javax.swing.JLabel();
+        labelLoginSubtitle1 = new javax.swing.JLabel();
+        panelEmail1 = new javax.swing.JPanel();
+        labelEmail1 = new javax.swing.JLabel();
+        fieldEmail1 = new javax.swing.JTextField();
+        panelFirstName = new javax.swing.JPanel();
+        labelFirstName = new javax.swing.JLabel();
+        fieldFirstName = new javax.swing.JTextField();
         panelBackground = new javax.swing.JPanel();
         panelContent = new javax.swing.JPanel();
 
+        panelContainerLogin.setMaximumSize(new java.awt.Dimension(1200, 650));
+        panelContainerLogin.setMinimumSize(new java.awt.Dimension(1200, 650));
+        panelContainerLogin.setName("panelLogin"); // NOI18N
+        panelContainerLogin.setPreferredSize(new java.awt.Dimension(1200, 650));
+        panelContainerLogin.setLayout(new java.awt.GridLayout(0, 2));
+
+        panelLogin.setBackground(new java.awt.Color(250, 250, 250));
+        panelLogin.setMaximumSize(new java.awt.Dimension(700, 252));
+        panelLogin.setLayout(new java.awt.GridBagLayout());
+
+        panelLoginForm.setBackground(new java.awt.Color(250, 250, 250));
+        panelLoginForm.setMaximumSize(new java.awt.Dimension(550, 400));
+        panelLoginForm.setMinimumSize(new java.awt.Dimension(550, 400));
+        panelLoginForm.setPreferredSize(new java.awt.Dimension(550, 400));
+        java.awt.GridBagLayout panelLoginFormLayout = new java.awt.GridBagLayout();
+        panelLoginFormLayout.columnWidths = new int[] {0, 0, 0};
+        panelLoginFormLayout.rowHeights = new int[] {0, 16, 0, 16, 0, 16, 0, 16, 0, 16, 0};
+        panelLoginForm.setLayout(panelLoginFormLayout);
+
+        panelEmail.setBackground(new java.awt.Color(250, 250, 250));
+        panelEmail.setLayout(new java.awt.GridBagLayout());
+
+        labelEmail.setBackground(new java.awt.Color(51, 51, 51));
+        labelEmail.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        labelEmail.setForeground(new java.awt.Color(51, 51, 51));
+        labelEmail.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelEmail.setText("Correo electrónico");
+        labelEmail.setMaximumSize(new java.awt.Dimension(350, 16));
+        labelEmail.setMinimumSize(new java.awt.Dimension(350, 16));
+        labelEmail.setPreferredSize(new java.awt.Dimension(350, 16));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = -101;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        panelEmail.add(labelEmail, gridBagConstraints);
+
+        fieldEmail.setBackground(new java.awt.Color(238, 238, 238));
+        fieldEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 238, 238), 1, true));
+        fieldEmail.setMaximumSize(new java.awt.Dimension(400, 30));
+        fieldEmail.setMinimumSize(new java.awt.Dimension(400, 30));
+        fieldEmail.setPreferredSize(new java.awt.Dimension(400, 30));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        panelEmail.add(fieldEmail, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        panelLoginForm.add(panelEmail, gridBagConstraints);
+
+        panelPasswordOptions.setBackground(new java.awt.Color(250, 250, 250));
+        panelPasswordOptions.setMaximumSize(new java.awt.Dimension(400, 30));
+        panelPasswordOptions.setMinimumSize(new java.awt.Dimension(400, 30));
+        panelPasswordOptions.setPreferredSize(new java.awt.Dimension(400, 30));
+        java.awt.GridBagLayout panelPasswordOptionsLayout = new java.awt.GridBagLayout();
+        panelPasswordOptionsLayout.columnWidths = new int[] {0, 88, 0};
+        panelPasswordOptionsLayout.rowHeights = new int[] {0};
+        panelPasswordOptions.setLayout(panelPasswordOptionsLayout);
+
+        checkboxRememberMe.setBackground(new java.awt.Color(250, 250, 250));
+        checkboxRememberMe.setForeground(new java.awt.Color(51, 51, 51));
+        checkboxRememberMe.setText("Recordarme");
+        checkboxRememberMe.setMaximumSize(new java.awt.Dimension(200, 20));
+        checkboxRememberMe.setMinimumSize(new java.awt.Dimension(100, 20));
+        checkboxRememberMe.setPreferredSize(new java.awt.Dimension(100, 20));
+        checkboxRememberMe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkboxRememberMeActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        panelPasswordOptions.add(checkboxRememberMe, gridBagConstraints);
+
+        panelPasswordReset1.setBackground(new java.awt.Color(250, 250, 250));
+        panelPasswordReset1.setMaximumSize(new java.awt.Dimension(230, 30));
+        panelPasswordReset1.setMinimumSize(new java.awt.Dimension(230, 30));
+        panelPasswordReset1.setName(""); // NOI18N
+        panelPasswordReset1.setPreferredSize(new java.awt.Dimension(230, 30));
+        panelPasswordReset1.setLayout(new java.awt.GridBagLayout());
+
+        labelForgotPassword1.setForeground(new java.awt.Color(51, 51, 51));
+        labelForgotPassword1.setText("¿Olvidaste tu contraseña?");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.ipadx = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        panelPasswordReset1.add(labelForgotPassword1, gridBagConstraints);
+
+        labelResetPassword1.setForeground(new java.awt.Color(0, 51, 153));
+        labelResetPassword1.setText("Recupérala");
+        labelResetPassword1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        panelPasswordReset1.add(labelResetPassword1, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        panelPasswordOptions.add(panelPasswordReset1, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        panelLoginForm.add(panelPasswordOptions, gridBagConstraints);
+
+        panelPassword.setBackground(new java.awt.Color(250, 250, 250));
+        panelPassword.setLayout(new java.awt.GridBagLayout());
+
+        labelPassword.setBackground(new java.awt.Color(51, 51, 51));
+        labelPassword.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        labelPassword.setForeground(new java.awt.Color(51, 51, 51));
+        labelPassword.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelPassword.setText("Contraseña");
+        labelPassword.setMaximumSize(new java.awt.Dimension(350, 16));
+        labelPassword.setMinimumSize(new java.awt.Dimension(350, 16));
+        labelPassword.setPreferredSize(new java.awt.Dimension(350, 16));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        panelPassword.add(labelPassword, gridBagConstraints);
+
+        fieldPassword.setBackground(new java.awt.Color(238, 238, 238));
+        fieldPassword.setForeground(new java.awt.Color(51, 51, 51));
+        fieldPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 238, 238), 1, true));
+        fieldPassword.setMaximumSize(new java.awt.Dimension(400, 30));
+        fieldPassword.setMinimumSize(new java.awt.Dimension(400, 30));
+        fieldPassword.setPreferredSize(new java.awt.Dimension(400, 30));
+        fieldPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldPasswordActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        panelPassword.add(fieldPassword, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        panelLoginForm.add(panelPassword, gridBagConstraints);
+
+        btnLogin.setBackground(new java.awt.Color(135, 23, 35));
+        btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogin.setText("Iniciar sesión");
+        btnLogin.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogin.setMaximumSize(new java.awt.Dimension(170, 40));
+        btnLogin.setMinimumSize(new java.awt.Dimension(170, 40));
+        btnLogin.setPreferredSize(new java.awt.Dimension(170, 40));
+        btnLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLoginMouseClicked(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        panelLoginForm.add(btnLogin, gridBagConstraints);
+
+        panelCreateAccount.setBackground(new java.awt.Color(250, 250, 250));
+        panelCreateAccount.setMaximumSize(new java.awt.Dimension(200, 30));
+        panelCreateAccount.setMinimumSize(new java.awt.Dimension(200, 30));
+        panelCreateAccount.setPreferredSize(new java.awt.Dimension(200, 30));
+        panelCreateAccount.setLayout(new java.awt.GridBagLayout());
+
+        labelForgotPassword.setForeground(new java.awt.Color(51, 51, 51));
+        labelForgotPassword.setText("¿Aún no tienes cuenta?");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.ipadx = 4;
+        panelCreateAccount.add(labelForgotPassword, gridBagConstraints);
+
+        labelResetPassword.setForeground(new java.awt.Color(0, 51, 153));
+        labelResetPassword.setText("Regístrate");
+        labelResetPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        labelResetPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelResetPasswordMouseClicked(evt);
+            }
+        });
+        panelCreateAccount.add(labelResetPassword, new java.awt.GridBagConstraints());
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 10;
+        panelLoginForm.add(panelCreateAccount, gridBagConstraints);
+
+        panelHeader.setBackground(new java.awt.Color(250, 250, 250));
+        java.awt.GridBagLayout panelHeaderLayout = new java.awt.GridBagLayout();
+        panelHeaderLayout.columnWidths = new int[] {0};
+        panelHeaderLayout.rowHeights = new int[] {0, 8, 0};
+        panelHeader.setLayout(panelHeaderLayout);
+
+        labelLoginTitle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        labelLoginTitle.setForeground(new java.awt.Color(0, 0, 0));
+        labelLoginTitle.setText("Iniciar sesión");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        panelHeader.add(labelLoginTitle, gridBagConstraints);
+
+        labelLoginSubtitle.setForeground(new java.awt.Color(153, 153, 153));
+        labelLoginSubtitle.setText("¡Bienvenida otra vez! Ingresa tus datos para ingresar a tu cuenta");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        panelHeader.add(labelLoginSubtitle, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 32, 0);
+        panelLoginForm.add(panelHeader, gridBagConstraints);
+
+        panelLogin.add(panelLoginForm, new java.awt.GridBagConstraints());
+
+        panelContainerLogin.add(panelLogin);
+
+        panelImg.setBackground(new java.awt.Color(255, 243, 235));
+        panelImg.setLayout(new java.awt.GridBagLayout());
+
+        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel1.setText("Ilustración");
+        panelImg.add(jLabel1, new java.awt.GridBagConstraints());
+
+        panelContainerLogin.add(panelImg);
+
+        panelContainerRegister.setMaximumSize(new java.awt.Dimension(1200, 650));
+        panelContainerRegister.setMinimumSize(new java.awt.Dimension(1200, 650));
+        panelContainerRegister.setPreferredSize(new java.awt.Dimension(1200, 650));
+        panelContainerRegister.setLayout(new java.awt.GridLayout(0, 2));
+
+        panelImg1.setBackground(new java.awt.Color(255, 243, 235));
+        panelImg1.setLayout(new java.awt.GridBagLayout());
+
+        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel2.setText("Ilustración");
+        panelImg1.add(jLabel2, new java.awt.GridBagConstraints());
+
+        panelContainerRegister.add(panelImg1);
+
+        panelRegister.setBackground(new java.awt.Color(250, 250, 250));
+        panelRegister.setMaximumSize(new java.awt.Dimension(700, 252));
+        panelRegister.setLayout(new java.awt.GridBagLayout());
+
+        panelRegisterForm.setBackground(new java.awt.Color(250, 250, 250));
+        panelRegisterForm.setMaximumSize(new java.awt.Dimension(550, 500));
+        panelRegisterForm.setMinimumSize(new java.awt.Dimension(550, 500));
+        panelRegisterForm.setPreferredSize(new java.awt.Dimension(550, 500));
+        java.awt.GridBagLayout panelRegisterFormLayout = new java.awt.GridBagLayout();
+        panelRegisterFormLayout.columnWidths = new int[] {0};
+        panelRegisterFormLayout.rowHeights = new int[] {0, 16, 0, 16, 0, 16, 0, 16, 0, 16, 0, 16, 0, 16, 0};
+        panelRegisterForm.setLayout(panelRegisterFormLayout);
+
+        panelLastName.setBackground(new java.awt.Color(250, 250, 250));
+        panelLastName.setLayout(new java.awt.GridBagLayout());
+
+        labelLastName.setBackground(new java.awt.Color(51, 51, 51));
+        labelLastName.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        labelLastName.setForeground(new java.awt.Color(51, 51, 51));
+        labelLastName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelLastName.setText("Apellido");
+        labelLastName.setMaximumSize(new java.awt.Dimension(350, 16));
+        labelLastName.setMinimumSize(new java.awt.Dimension(350, 16));
+        labelLastName.setPreferredSize(new java.awt.Dimension(350, 16));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = -101;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        panelLastName.add(labelLastName, gridBagConstraints);
+
+        fieldLastName.setBackground(new java.awt.Color(238, 238, 238));
+        fieldLastName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 238, 238), 1, true));
+        fieldLastName.setMaximumSize(new java.awt.Dimension(400, 30));
+        fieldLastName.setMinimumSize(new java.awt.Dimension(400, 30));
+        fieldLastName.setPreferredSize(new java.awt.Dimension(400, 30));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        panelLastName.add(fieldLastName, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        panelRegisterForm.add(panelLastName, gridBagConstraints);
+
+        panelPassword1.setBackground(new java.awt.Color(250, 250, 250));
+        panelPassword1.setLayout(new java.awt.GridBagLayout());
+
+        labelPassword1.setBackground(new java.awt.Color(51, 51, 51));
+        labelPassword1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        labelPassword1.setForeground(new java.awt.Color(51, 51, 51));
+        labelPassword1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelPassword1.setText("Contraseña");
+        labelPassword1.setMaximumSize(new java.awt.Dimension(350, 16));
+        labelPassword1.setMinimumSize(new java.awt.Dimension(350, 16));
+        labelPassword1.setPreferredSize(new java.awt.Dimension(350, 16));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        panelPassword1.add(labelPassword1, gridBagConstraints);
+
+        fieldPassword1.setBackground(new java.awt.Color(238, 238, 238));
+        fieldPassword1.setForeground(new java.awt.Color(51, 51, 51));
+        fieldPassword1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 238, 238), 1, true));
+        fieldPassword1.setMaximumSize(new java.awt.Dimension(400, 30));
+        fieldPassword1.setMinimumSize(new java.awt.Dimension(400, 30));
+        fieldPassword1.setPreferredSize(new java.awt.Dimension(400, 30));
+        fieldPassword1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldPassword1ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        panelPassword1.add(fieldPassword1, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        panelRegisterForm.add(panelPassword1, gridBagConstraints);
+
+        btnRegister.setBackground(new java.awt.Color(135, 23, 35));
+        btnRegister.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnRegister.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegister.setText("Registrarse");
+        btnRegister.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegister.setMaximumSize(new java.awt.Dimension(170, 40));
+        btnRegister.setMinimumSize(new java.awt.Dimension(170, 40));
+        btnRegister.setPreferredSize(new java.awt.Dimension(170, 40));
+        btnRegister.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRegisterMouseClicked(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 12;
+        panelRegisterForm.add(btnRegister, gridBagConstraints);
+
+        panelCreateAccount1.setBackground(new java.awt.Color(250, 250, 250));
+        panelCreateAccount1.setMaximumSize(new java.awt.Dimension(220, 30));
+        panelCreateAccount1.setMinimumSize(new java.awt.Dimension(220, 30));
+        panelCreateAccount1.setPreferredSize(new java.awt.Dimension(220, 30));
+        panelCreateAccount1.setLayout(new java.awt.GridBagLayout());
+
+        labelAccountExists.setForeground(new java.awt.Color(51, 51, 51));
+        labelAccountExists.setText("¿Ya tienes una cuenta?");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.ipadx = 4;
+        panelCreateAccount1.add(labelAccountExists, gridBagConstraints);
+
+        labelLogin.setForeground(new java.awt.Color(0, 51, 153));
+        labelLogin.setText("Inicia sesión");
+        labelLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        labelLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelLoginMouseClicked(evt);
+            }
+        });
+        panelCreateAccount1.add(labelLogin, new java.awt.GridBagConstraints());
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 14;
+        panelRegisterForm.add(panelCreateAccount1, gridBagConstraints);
+
+        panelHeader1.setBackground(new java.awt.Color(250, 250, 250));
+        java.awt.GridBagLayout panelHeader1Layout = new java.awt.GridBagLayout();
+        panelHeader1Layout.columnWidths = new int[] {0};
+        panelHeader1Layout.rowHeights = new int[] {0, 8, 0};
+        panelHeader1.setLayout(panelHeader1Layout);
+
+        labelLoginTitle1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        labelLoginTitle1.setForeground(new java.awt.Color(0, 0, 0));
+        labelLoginTitle1.setText("Registrarse");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        panelHeader1.add(labelLoginTitle1, gridBagConstraints);
+
+        labelLoginSubtitle1.setForeground(new java.awt.Color(153, 153, 153));
+        labelLoginSubtitle1.setText("¡Nos alegra que te unas a nuestra comunidad! ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        panelHeader1.add(labelLoginSubtitle1, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 32, 0);
+        panelRegisterForm.add(panelHeader1, gridBagConstraints);
+
+        panelEmail1.setBackground(new java.awt.Color(250, 250, 250));
+        panelEmail1.setLayout(new java.awt.GridBagLayout());
+
+        labelEmail1.setBackground(new java.awt.Color(51, 51, 51));
+        labelEmail1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        labelEmail1.setForeground(new java.awt.Color(51, 51, 51));
+        labelEmail1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelEmail1.setText("Correo electrónico");
+        labelEmail1.setMaximumSize(new java.awt.Dimension(350, 16));
+        labelEmail1.setMinimumSize(new java.awt.Dimension(350, 16));
+        labelEmail1.setPreferredSize(new java.awt.Dimension(350, 16));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = -101;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        panelEmail1.add(labelEmail1, gridBagConstraints);
+
+        fieldEmail1.setBackground(new java.awt.Color(238, 238, 238));
+        fieldEmail1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 238, 238), 1, true));
+        fieldEmail1.setMaximumSize(new java.awt.Dimension(400, 30));
+        fieldEmail1.setMinimumSize(new java.awt.Dimension(400, 30));
+        fieldEmail1.setPreferredSize(new java.awt.Dimension(400, 30));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        panelEmail1.add(fieldEmail1, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        panelRegisterForm.add(panelEmail1, gridBagConstraints);
+
+        panelFirstName.setBackground(new java.awt.Color(250, 250, 250));
+        panelFirstName.setLayout(new java.awt.GridBagLayout());
+
+        labelFirstName.setBackground(new java.awt.Color(51, 51, 51));
+        labelFirstName.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        labelFirstName.setForeground(new java.awt.Color(51, 51, 51));
+        labelFirstName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelFirstName.setText("Nombre");
+        labelFirstName.setMaximumSize(new java.awt.Dimension(350, 16));
+        labelFirstName.setMinimumSize(new java.awt.Dimension(350, 16));
+        labelFirstName.setPreferredSize(new java.awt.Dimension(350, 16));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = -101;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        panelFirstName.add(labelFirstName, gridBagConstraints);
+
+        fieldFirstName.setBackground(new java.awt.Color(238, 238, 238));
+        fieldFirstName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 238, 238), 1, true));
+        fieldFirstName.setMaximumSize(new java.awt.Dimension(400, 30));
+        fieldFirstName.setMinimumSize(new java.awt.Dimension(400, 30));
+        fieldFirstName.setPreferredSize(new java.awt.Dimension(400, 30));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        panelFirstName.add(fieldFirstName, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        panelRegisterForm.add(panelFirstName, gridBagConstraints);
+
+        panelRegister.add(panelRegisterForm, new java.awt.GridBagConstraints());
+
+        panelContainerRegister.add(panelRegister);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Librosfera");
         setBackground(new java.awt.Color(153, 153, 153));
         setMaximumSize(new java.awt.Dimension(1400, 728));
         setMinimumSize(new java.awt.Dimension(1400, 728));
@@ -85,6 +623,40 @@ public class Inicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void checkboxRememberMeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkboxRememberMeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkboxRememberMeActionPerformed
+
+    private void fieldPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldPasswordActionPerformed
+
+    private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
+        // ---- LLEVAR A APP ---- //
+        frameApp.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnLoginMouseClicked
+
+    private void labelResetPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelResetPasswordMouseClicked
+        // Agregar panel de Register al panel de contenido
+        renderizarVista(panelContainerRegister);
+    }//GEN-LAST:event_labelResetPasswordMouseClicked
+
+    private void fieldPassword1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldPassword1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldPassword1ActionPerformed
+
+    private void btnRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegisterMouseClicked
+        App frameHome = new App();
+        frameHome.setVisible(true);
+    }//GEN-LAST:event_btnRegisterMouseClicked
+
+    private void labelLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelLoginMouseClicked
+
+        // Agregar panel de Register al panel de contenido
+        renderizarVista(panelContainerLogin);
+    }//GEN-LAST:event_labelLoginMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -121,7 +693,54 @@ public class Inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnRegister;
+    private javax.swing.JCheckBox checkboxRememberMe;
+    private javax.swing.JTextField fieldEmail;
+    private javax.swing.JTextField fieldEmail1;
+    private javax.swing.JTextField fieldFirstName;
+    private javax.swing.JTextField fieldLastName;
+    private javax.swing.JPasswordField fieldPassword;
+    private javax.swing.JPasswordField fieldPassword1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel labelAccountExists;
+    private javax.swing.JLabel labelEmail;
+    private javax.swing.JLabel labelEmail1;
+    private javax.swing.JLabel labelFirstName;
+    private javax.swing.JLabel labelForgotPassword;
+    private javax.swing.JLabel labelForgotPassword1;
+    private javax.swing.JLabel labelLastName;
+    private javax.swing.JLabel labelLogin;
+    private javax.swing.JLabel labelLoginSubtitle;
+    private javax.swing.JLabel labelLoginSubtitle1;
+    private javax.swing.JLabel labelLoginTitle;
+    private javax.swing.JLabel labelLoginTitle1;
+    private javax.swing.JLabel labelPassword;
+    private javax.swing.JLabel labelPassword1;
+    private javax.swing.JLabel labelResetPassword;
+    private javax.swing.JLabel labelResetPassword1;
     private javax.swing.JPanel panelBackground;
+    private javax.swing.JPanel panelContainerLogin;
+    private javax.swing.JPanel panelContainerRegister;
     private javax.swing.JPanel panelContent;
+    private javax.swing.JPanel panelCreateAccount;
+    private javax.swing.JPanel panelCreateAccount1;
+    private javax.swing.JPanel panelEmail;
+    private javax.swing.JPanel panelEmail1;
+    private javax.swing.JPanel panelFirstName;
+    private javax.swing.JPanel panelHeader;
+    private javax.swing.JPanel panelHeader1;
+    private javax.swing.JPanel panelImg;
+    private javax.swing.JPanel panelImg1;
+    private javax.swing.JPanel panelLastName;
+    private javax.swing.JPanel panelLogin;
+    private javax.swing.JPanel panelLoginForm;
+    private javax.swing.JPanel panelPassword;
+    private javax.swing.JPanel panelPassword1;
+    private javax.swing.JPanel panelPasswordOptions;
+    private javax.swing.JPanel panelPasswordReset1;
+    private javax.swing.JPanel panelRegister;
+    private javax.swing.JPanel panelRegisterForm;
     // End of variables declaration//GEN-END:variables
 }
