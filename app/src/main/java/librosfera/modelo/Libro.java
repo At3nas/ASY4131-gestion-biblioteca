@@ -1,86 +1,43 @@
 package librosfera.modelo;
 
-import java.time.*;
+import java.util.List;
 
 public class Libro {
 
     // ATRIBUTOS //
-    private String titulo;
-    private Autor autor;
-    private String sinopsis;
-    private Year annioPublicacion;
-    private Genero genero;
-    private Integer nroPaginas;
-    private String isbn;
-
-    // CONSTRUCTOR //
-    public Libro(String titulo, Autor autor, String sinopsis, Year annioPublicacion, Genero genero, Integer nroPaginas, String isbn) {
-        this.titulo = titulo;
-        this.autor = autor;
-        this.sinopsis = sinopsis;
-        this.annioPublicacion = annioPublicacion;
-        this.genero = genero;
-        this.nroPaginas = nroPaginas;
-        this.isbn = isbn;
-    }
-
+    private List<String> author_name;
+    private List<String> isbn;
+    private String title;
+    
+    
+    
+    
     // GETTER //
-    public String getTitulo() {
-        return titulo;
+    public String getTitle() {
+        return title;
     }
 
-    public Autor getAutor() {
-        return autor;
-    }
-
-    public String getSinopsis() {
-        return sinopsis;
-    }
-
-    public Year getAnnioPublicacion() {
-        return annioPublicacion;
-    }
-
-    public Genero getGenero() {
-        return genero;
-    }
-
-    public Integer getNroPaginas() {
-        return nroPaginas;
-    }
-
-    public String getIsbn() {
+    public List<String> getIsbn() {
         return isbn;
     }
-
+    
+    public List<String> getAuthor_name() {
+        return author_name;
+    }
+    
     // SETTER //
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setAutor(Autor autor) {
-        this.autor = autor;
+    public void setAuthor_name(List<String> author_name) {
+        this.author_name = author_name;
     }
 
-    public void setSinopsis(String sinopsis) {
-        this.sinopsis = sinopsis;
-    }
-
-    public void setAnnioPublicacion(Year annioPublicacion) {
-        this.annioPublicacion = annioPublicacion;
-    }
-
-    public void setGenero(Genero genero) {
-        this.genero = genero;
-    }
-
-    public void setNroPaginas(Integer nroPaginas) {
-        this.nroPaginas = nroPaginas;
-    }
-
-    public void setIsbn(String isbn) {
+    public void setIsbn(List<String> isbn) {
         this.isbn = isbn;
     }
-
-    // MÉTODOS //
+    
+    
 }
+

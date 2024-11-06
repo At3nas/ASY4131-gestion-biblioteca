@@ -1,13 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package librosfera.vista;
 
-/**
- *
- * @author ateka
- */
+import com.google.gson.Gson;
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+import librosfera.modelo.Libro;
+import librosfera.modelo.ListaLibros;
+import librosfera.modelo.Main;
+import librosfera.vista.components.BookCard;
+
 public class Explorar extends javax.swing.JPanel {
 
     /**
@@ -31,8 +37,8 @@ public class Explorar extends javax.swing.JPanel {
         labelExplorar = new javax.swing.JLabel();
         fieldSearch = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        panelBookCards = new javax.swing.JScrollPane();
+        tableSearchResult = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(250, 250, 250));
         setLayout(new java.awt.GridBagLayout());
@@ -74,11 +80,16 @@ public class Explorar extends javax.swing.JPanel {
         btnSearch.setBackground(new java.awt.Color(58, 33, 36));
         btnSearch.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnSearch.setForeground(new java.awt.Color(255, 255, 255));
-        btnSearch.setText(">");
+        btnSearch.setText("<");
         btnSearch.setBorder(null);
         btnSearch.setMaximumSize(new java.awt.Dimension(50, 50));
         btnSearch.setMinimumSize(new java.awt.Dimension(50, 50));
         btnSearch.setPreferredSize(new java.awt.Dimension(50, 50));
+        btnSearch.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSearchMouseClicked(evt);
+            }
+        });
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
@@ -96,28 +107,42 @@ public class Explorar extends javax.swing.JPanel {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_START;
         add(panelHeader, gridBagConstraints);
 
-        jTable1.setBackground(new java.awt.Color(240, 240, 240));
-        jTable1.setForeground(new java.awt.Color(51, 51, 51));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        panelBookCards.setMaximumSize(new java.awt.Dimension(900, 500));
+        panelBookCards.setMinimumSize(new java.awt.Dimension(900, 500));
+        panelBookCards.setPreferredSize(new java.awt.Dimension(900, 500));
+
+        tableSearchResult.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Título", "Autor"
             }
-        ));
-        jTable1.setMaximumSize(new java.awt.Dimension(800, 80));
-        jTable1.setMinimumSize(new java.awt.Dimension(800, 80));
-        jTable1.setPreferredSize(new java.awt.Dimension(800, 80));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        panelBookCards.setViewportView(tableSearchResult);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        add(jScrollPane1, gridBagConstraints);
+        add(panelBookCards, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     private void fieldSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldSearchActionPerformed
@@ -127,14 +152,68 @@ public class Explorar extends javax.swing.JPanel {
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSearchActionPerformed
+    // CLick | Botón Buscar
+    private void btnSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchMouseClicked
+        // Almacena el modelo de la tabla
+        DefaultTableModel modelResults = (DefaultTableModel) tableSearchResult.getModel();
+
+        // Limpia la tabla para actualizar los datos
+        modelResults.setRowCount(0);
+
+        // Obtener texto ingresado por el usuario
+        String inputSearch = fieldSearch.getText().replace(" ", "+");
+
+        // API URL
+        String url = "https://openlibrary.org/search.json?q=" + inputSearch + "&fields=title,author_name,isbn";
+
+        // INSTANCIA DE HTTPCLIENT
+        // se encarga de enviar una request al servidor
+        HttpClient client = HttpClient.newHttpClient();
+
+        // CREAR REQUEST
+        HttpRequest request = HttpRequest.newBuilder().uri(URI.create(url)).GET().build();
+
+        try {
+            // ENVIAR REQUEST
+            HttpResponse response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            String strResponse = response.body().toString();
+
+            // Crear objeto GSON
+            Gson gson = new Gson();
+            ListaLibros listaLibros = gson.fromJson(strResponse, ListaLibros.class);
+
+            for (Libro l : listaLibros.getDocs()) {
+                // Atributos //
+                String title = l.getTitle();
+                String author = l.getAuthor_name().getFirst();
+                //String isbn = l.getIsbn().getFirst();
+
+                // Agregar una tarjeta
+                //BookCard card = new BookCard(title, author);
+                //panelBookCards.add(card);
+                // Agregar libros a la tabla
+                modelResults.addRow(new Object[]{
+                    title,
+                    author
+                });
+            }
+
+            //ListaLibros listaLibros1 = gson.fromJson(response.body(), ListaLibros.class);    
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_btnSearchMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSearch;
     private javax.swing.JTextField fieldSearch;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel labelExplorar;
+    private javax.swing.JScrollPane panelBookCards;
     private javax.swing.JPanel panelHeader;
+    private javax.swing.JTable tableSearchResult;
     // End of variables declaration//GEN-END:variables
 }

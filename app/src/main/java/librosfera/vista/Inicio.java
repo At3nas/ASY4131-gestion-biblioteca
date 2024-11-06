@@ -579,7 +579,7 @@ public class Inicio extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1400, 728));
         setPreferredSize(new java.awt.Dimension(1400, 728));
 
-        panelBackground.setBackground(new java.awt.Color(58, 33, 36));
+        panelBackground.setBackground(new java.awt.Color(250, 250, 250));
         panelBackground.setMaximumSize(new java.awt.Dimension(1400, 728));
         panelBackground.setMinimumSize(new java.awt.Dimension(1400, 728));
         panelBackground.setPreferredSize(new java.awt.Dimension(1400, 728));
