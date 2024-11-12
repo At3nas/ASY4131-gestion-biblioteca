@@ -1,12 +1,18 @@
 package librosfera.vista;
 
+import javax.swing.ImageIcon;
+
 public class App extends javax.swing.JFrame {
+    //ImageIcon iconHome = new ImageIcon(this.getClass().getResource("/home.png"));
 
     public App() {
         initComponents();
 
         // Permite que la app se ejecute en pantalla maximizada
         setExtendedState(Inicio.MAXIMIZED_BOTH);
+        
+        // SET ICONS //
+        //labelDashboard.setIcon(iconHome);
     }
 
     /**
@@ -66,9 +72,15 @@ public class App extends javax.swing.JFrame {
 
         labelDashboard.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         labelDashboard.setForeground(new java.awt.Color(250, 250, 250));
+        labelDashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home.png"))); // NOI18N
         labelDashboard.setText("Dashboard");
         labelDashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         labelDashboard.setIconTextGap(8);
+        labelDashboard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                navigateToDashboard(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -77,6 +89,7 @@ public class App extends javax.swing.JFrame {
 
         labelExplore.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         labelExplore.setForeground(new java.awt.Color(250, 250, 250));
+        labelExplore.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
         labelExplore.setText("Explorar");
         labelExplore.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         labelExplore.setIconTextGap(8);
@@ -93,6 +106,7 @@ public class App extends javax.swing.JFrame {
 
         labelHistory.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         labelHistory.setForeground(new java.awt.Color(250, 250, 250));
+        labelHistory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/history.png"))); // NOI18N
         labelHistory.setText("Historial");
         labelHistory.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         labelHistory.setIconTextGap(8);
@@ -104,6 +118,7 @@ public class App extends javax.swing.JFrame {
 
         labelLibrary.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         labelLibrary.setForeground(new java.awt.Color(250, 250, 250));
+        labelLibrary.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library.png"))); // NOI18N
         labelLibrary.setText("Biblioteca");
         labelLibrary.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         labelLibrary.setEnabled(false);
@@ -144,10 +159,9 @@ public class App extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+// Navegar | Vista Explorar
     private void navigateExplore(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navigateExplore
-        // Renderizar la vista Explorar
-        
+ 
         // Crear la vista Explorar
         Explorar vistaExplorar = new Explorar();
         
@@ -162,6 +176,21 @@ public class App extends javax.swing.JFrame {
         panelContent.repaint();
 
     }//GEN-LAST:event_navigateExplore
+// Navegar | Vista Dashboard
+    private void navigateToDashboard(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navigateToDashboard
+        // Crear la vista Dashboard
+        Dashboard vistaDashboard = new Dashboard();
+        
+        // Establecer los tamaños
+        vistaDashboard.setSize(1170, 728);
+        vistaDashboard.setLocation(0, 0);
+        
+        // Limpiar el panel de contenido, añadir la vista y refrescarla
+        panelContent.removeAll();
+        panelContent.add(vistaDashboard);
+        panelContent.revalidate();
+        panelContent.repaint();
+    }//GEN-LAST:event_navigateToDashboard
 
     /**
      * @param args the command line arguments

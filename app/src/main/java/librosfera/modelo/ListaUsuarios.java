@@ -1,4 +1,3 @@
-package librosfera.modelo;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -29,7 +28,7 @@ public class ListaUsuarios {
         // itera cada usuario en la lista
         for (Usuario user : this.listaUsuarios) {
             // si encuentra el usuario, es retornado
-            if (user.idUsuario.equals(id)) {
+            if (user.idUser.equals(id)) {
                 return Optional.of(user);
             }
         }

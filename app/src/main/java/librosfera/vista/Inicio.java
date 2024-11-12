@@ -1,5 +1,6 @@
 package librosfera.vista;
 
+import java.util.Arrays;
 import javax.swing.JPanel;
 
 public class Inicio extends javax.swing.JFrame {
@@ -44,7 +45,7 @@ public class Inicio extends javax.swing.JFrame {
         panelLoginForm = new javax.swing.JPanel();
         panelEmail = new javax.swing.JPanel();
         labelEmail = new javax.swing.JLabel();
-        fieldEmail = new javax.swing.JTextField();
+        fieldLoginEmail = new javax.swing.JTextField();
         panelPasswordOptions = new javax.swing.JPanel();
         checkboxRememberMe = new javax.swing.JCheckBox();
         panelPasswordReset1 = new javax.swing.JPanel();
@@ -52,7 +53,7 @@ public class Inicio extends javax.swing.JFrame {
         labelResetPassword1 = new javax.swing.JLabel();
         panelPassword = new javax.swing.JPanel();
         labelPassword = new javax.swing.JLabel();
-        fieldPassword = new javax.swing.JPasswordField();
+        fieldLoginPassword = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
         panelCreateAccount = new javax.swing.JPanel();
         labelForgotPassword = new javax.swing.JLabel();
@@ -70,9 +71,12 @@ public class Inicio extends javax.swing.JFrame {
         panelLastName = new javax.swing.JPanel();
         labelLastName = new javax.swing.JLabel();
         fieldLastName = new javax.swing.JTextField();
-        panelPassword1 = new javax.swing.JPanel();
-        labelPassword1 = new javax.swing.JLabel();
-        fieldPassword1 = new javax.swing.JPasswordField();
+        panelRegisterConfirmPassword = new javax.swing.JPanel();
+        labelRegisterConfirmPassword = new javax.swing.JLabel();
+        fieldRegisterConfirmPassword = new javax.swing.JPasswordField();
+        panelRegisterPassword1 = new javax.swing.JPanel();
+        labelRegisterPassword1 = new javax.swing.JLabel();
+        fieldRegisterPassword1 = new javax.swing.JPasswordField();
         btnRegister = new javax.swing.JButton();
         panelCreateAccount1 = new javax.swing.JPanel();
         labelAccountExists = new javax.swing.JLabel();
@@ -82,7 +86,7 @@ public class Inicio extends javax.swing.JFrame {
         labelLoginSubtitle1 = new javax.swing.JLabel();
         panelEmail1 = new javax.swing.JPanel();
         labelEmail1 = new javax.swing.JLabel();
-        fieldEmail1 = new javax.swing.JTextField();
+        fieldRegisterEmail = new javax.swing.JTextField();
         panelFirstName = new javax.swing.JPanel();
         labelFirstName = new javax.swing.JLabel();
         fieldFirstName = new javax.swing.JTextField();
@@ -126,15 +130,15 @@ public class Inicio extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         panelEmail.add(labelEmail, gridBagConstraints);
 
-        fieldEmail.setBackground(new java.awt.Color(238, 238, 238));
-        fieldEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 238, 238), 1, true));
-        fieldEmail.setMaximumSize(new java.awt.Dimension(400, 30));
-        fieldEmail.setMinimumSize(new java.awt.Dimension(400, 30));
-        fieldEmail.setPreferredSize(new java.awt.Dimension(400, 30));
+        fieldLoginEmail.setBackground(new java.awt.Color(238, 238, 238));
+        fieldLoginEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 238, 238), 1, true));
+        fieldLoginEmail.setMaximumSize(new java.awt.Dimension(400, 30));
+        fieldLoginEmail.setMinimumSize(new java.awt.Dimension(400, 30));
+        fieldLoginEmail.setPreferredSize(new java.awt.Dimension(400, 30));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        panelEmail.add(fieldEmail, gridBagConstraints);
+        panelEmail.add(fieldLoginEmail, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -217,15 +221,15 @@ public class Inicio extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         panelPassword.add(labelPassword, gridBagConstraints);
 
-        fieldPassword.setBackground(new java.awt.Color(238, 238, 238));
-        fieldPassword.setForeground(new java.awt.Color(51, 51, 51));
-        fieldPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 238, 238), 1, true));
-        fieldPassword.setMaximumSize(new java.awt.Dimension(400, 30));
-        fieldPassword.setMinimumSize(new java.awt.Dimension(400, 30));
-        fieldPassword.setPreferredSize(new java.awt.Dimension(400, 30));
-        fieldPassword.addActionListener(new java.awt.event.ActionListener() {
+        fieldLoginPassword.setBackground(new java.awt.Color(238, 238, 238));
+        fieldLoginPassword.setForeground(new java.awt.Color(51, 51, 51));
+        fieldLoginPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 238, 238), 1, true));
+        fieldLoginPassword.setMaximumSize(new java.awt.Dimension(400, 30));
+        fieldLoginPassword.setMinimumSize(new java.awt.Dimension(400, 30));
+        fieldLoginPassword.setPreferredSize(new java.awt.Dimension(400, 30));
+        fieldLoginPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldPasswordActionPerformed(evt);
+                fieldLoginPasswordActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -233,7 +237,7 @@ public class Inicio extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        panelPassword.add(fieldPassword, gridBagConstraints);
+        panelPassword.add(fieldLoginPassword, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -361,7 +365,7 @@ public class Inicio extends javax.swing.JFrame {
         labelLastName.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         labelLastName.setForeground(new java.awt.Color(51, 51, 51));
         labelLastName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        labelLastName.setText("Apellido");
+        labelLastName.setText("Apellido(*)");
         labelLastName.setMaximumSize(new java.awt.Dimension(350, 16));
         labelLastName.setMinimumSize(new java.awt.Dimension(350, 16));
         labelLastName.setPreferredSize(new java.awt.Dimension(350, 16));
@@ -387,32 +391,32 @@ public class Inicio extends javax.swing.JFrame {
         gridBagConstraints.gridy = 4;
         panelRegisterForm.add(panelLastName, gridBagConstraints);
 
-        panelPassword1.setBackground(new java.awt.Color(250, 250, 250));
-        panelPassword1.setLayout(new java.awt.GridBagLayout());
+        panelRegisterConfirmPassword.setBackground(new java.awt.Color(250, 250, 250));
+        panelRegisterConfirmPassword.setLayout(new java.awt.GridBagLayout());
 
-        labelPassword1.setBackground(new java.awt.Color(51, 51, 51));
-        labelPassword1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelPassword1.setForeground(new java.awt.Color(51, 51, 51));
-        labelPassword1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        labelPassword1.setText("Contraseña");
-        labelPassword1.setMaximumSize(new java.awt.Dimension(350, 16));
-        labelPassword1.setMinimumSize(new java.awt.Dimension(350, 16));
-        labelPassword1.setPreferredSize(new java.awt.Dimension(350, 16));
+        labelRegisterConfirmPassword.setBackground(new java.awt.Color(51, 51, 51));
+        labelRegisterConfirmPassword.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        labelRegisterConfirmPassword.setForeground(new java.awt.Color(51, 51, 51));
+        labelRegisterConfirmPassword.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelRegisterConfirmPassword.setText("Confirme la contraseña(*)");
+        labelRegisterConfirmPassword.setMaximumSize(new java.awt.Dimension(350, 16));
+        labelRegisterConfirmPassword.setMinimumSize(new java.awt.Dimension(350, 16));
+        labelRegisterConfirmPassword.setPreferredSize(new java.awt.Dimension(350, 16));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        panelPassword1.add(labelPassword1, gridBagConstraints);
+        panelRegisterConfirmPassword.add(labelRegisterConfirmPassword, gridBagConstraints);
 
-        fieldPassword1.setBackground(new java.awt.Color(238, 238, 238));
-        fieldPassword1.setForeground(new java.awt.Color(51, 51, 51));
-        fieldPassword1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 238, 238), 1, true));
-        fieldPassword1.setMaximumSize(new java.awt.Dimension(400, 30));
-        fieldPassword1.setMinimumSize(new java.awt.Dimension(400, 30));
-        fieldPassword1.setPreferredSize(new java.awt.Dimension(400, 30));
-        fieldPassword1.addActionListener(new java.awt.event.ActionListener() {
+        fieldRegisterConfirmPassword.setBackground(new java.awt.Color(238, 238, 238));
+        fieldRegisterConfirmPassword.setForeground(new java.awt.Color(51, 51, 51));
+        fieldRegisterConfirmPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 238, 238), 1, true));
+        fieldRegisterConfirmPassword.setMaximumSize(new java.awt.Dimension(400, 30));
+        fieldRegisterConfirmPassword.setMinimumSize(new java.awt.Dimension(400, 30));
+        fieldRegisterConfirmPassword.setPreferredSize(new java.awt.Dimension(400, 30));
+        fieldRegisterConfirmPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldPassword1ActionPerformed(evt);
+                fieldRegisterConfirmPasswordActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -420,13 +424,53 @@ public class Inicio extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        panelPassword1.add(fieldPassword1, gridBagConstraints);
+        panelRegisterConfirmPassword.add(fieldRegisterConfirmPassword, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 10;
+        panelRegisterForm.add(panelRegisterConfirmPassword, gridBagConstraints);
+
+        panelRegisterPassword1.setBackground(new java.awt.Color(250, 250, 250));
+        panelRegisterPassword1.setLayout(new java.awt.GridBagLayout());
+
+        labelRegisterPassword1.setBackground(new java.awt.Color(51, 51, 51));
+        labelRegisterPassword1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        labelRegisterPassword1.setForeground(new java.awt.Color(51, 51, 51));
+        labelRegisterPassword1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelRegisterPassword1.setText("Contraseña(*)");
+        labelRegisterPassword1.setMaximumSize(new java.awt.Dimension(350, 16));
+        labelRegisterPassword1.setMinimumSize(new java.awt.Dimension(350, 16));
+        labelRegisterPassword1.setPreferredSize(new java.awt.Dimension(350, 16));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        panelRegisterPassword1.add(labelRegisterPassword1, gridBagConstraints);
+
+        fieldRegisterPassword1.setBackground(new java.awt.Color(238, 238, 238));
+        fieldRegisterPassword1.setForeground(new java.awt.Color(51, 51, 51));
+        fieldRegisterPassword1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 238, 238), 1, true));
+        fieldRegisterPassword1.setMaximumSize(new java.awt.Dimension(400, 30));
+        fieldRegisterPassword1.setMinimumSize(new java.awt.Dimension(400, 30));
+        fieldRegisterPassword1.setPreferredSize(new java.awt.Dimension(400, 30));
+        fieldRegisterPassword1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldRegisterPassword1ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        panelRegisterPassword1.add(fieldRegisterPassword1, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        panelRegisterForm.add(panelPassword1, gridBagConstraints);
+        panelRegisterForm.add(panelRegisterPassword1, gridBagConstraints);
 
         btnRegister.setBackground(new java.awt.Color(135, 23, 35));
         btnRegister.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -508,7 +552,7 @@ public class Inicio extends javax.swing.JFrame {
         labelEmail1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         labelEmail1.setForeground(new java.awt.Color(51, 51, 51));
         labelEmail1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        labelEmail1.setText("Correo electrónico");
+        labelEmail1.setText("Correo electrónico(*)");
         labelEmail1.setMaximumSize(new java.awt.Dimension(350, 16));
         labelEmail1.setMinimumSize(new java.awt.Dimension(350, 16));
         labelEmail1.setPreferredSize(new java.awt.Dimension(350, 16));
@@ -519,15 +563,15 @@ public class Inicio extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         panelEmail1.add(labelEmail1, gridBagConstraints);
 
-        fieldEmail1.setBackground(new java.awt.Color(238, 238, 238));
-        fieldEmail1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 238, 238), 1, true));
-        fieldEmail1.setMaximumSize(new java.awt.Dimension(400, 30));
-        fieldEmail1.setMinimumSize(new java.awt.Dimension(400, 30));
-        fieldEmail1.setPreferredSize(new java.awt.Dimension(400, 30));
+        fieldRegisterEmail.setBackground(new java.awt.Color(238, 238, 238));
+        fieldRegisterEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 238, 238), 1, true));
+        fieldRegisterEmail.setMaximumSize(new java.awt.Dimension(400, 30));
+        fieldRegisterEmail.setMinimumSize(new java.awt.Dimension(400, 30));
+        fieldRegisterEmail.setPreferredSize(new java.awt.Dimension(400, 30));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        panelEmail1.add(fieldEmail1, gridBagConstraints);
+        panelEmail1.add(fieldRegisterEmail, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -542,7 +586,7 @@ public class Inicio extends javax.swing.JFrame {
         labelFirstName.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         labelFirstName.setForeground(new java.awt.Color(51, 51, 51));
         labelFirstName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        labelFirstName.setText("Nombre");
+        labelFirstName.setText("Nombre(*)");
         labelFirstName.setMaximumSize(new java.awt.Dimension(350, 16));
         labelFirstName.setMinimumSize(new java.awt.Dimension(350, 16));
         labelFirstName.setPreferredSize(new java.awt.Dimension(350, 16));
@@ -627,9 +671,9 @@ public class Inicio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_checkboxRememberMeActionPerformed
 
-    private void fieldPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldPasswordActionPerformed
+    private void fieldLoginPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldLoginPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_fieldPasswordActionPerformed
+    }//GEN-LAST:event_fieldLoginPasswordActionPerformed
 
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
         // ---- LLEVAR A APP ---- //
@@ -642,13 +686,28 @@ public class Inicio extends javax.swing.JFrame {
         renderizarVista(panelContainerRegister);
     }//GEN-LAST:event_labelResetPasswordMouseClicked
 
-    private void fieldPassword1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldPassword1ActionPerformed
+    private void fieldRegisterConfirmPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldRegisterConfirmPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_fieldPassword1ActionPerformed
-
+    }//GEN-LAST:event_fieldRegisterConfirmPasswordActionPerformed
+    
+    // Click | Botón Registrarse
     private void btnRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegisterMouseClicked
-        App frameHome = new App();
-        frameHome.setVisible(true);
+        // ALMACENA LOS CAMPOS //
+        String userFirstName = fieldFirstName.getText();
+        String userLastName = fieldLastName.getText();
+        String userEmail = fieldRegisterEmail.getText();
+        char[] userPassword = fieldRegisterConfirmPassword.getPassword();
+        char[] userPassword2 = fieldRegisterConfirmPassword.getPassword();
+        
+        if (Arrays.equals(userPassword, userPassword2)) {
+            System.out.println("CONTRASEÑA VALIDA");
+        } else {
+            System.out.println("CONTRASEÑA INVALIDA");
+        }
+        
+        //String[] fields = [userFirstName, userLastName, userEmail, userPassword];
+        
+        // //
     }//GEN-LAST:event_btnRegisterMouseClicked
 
     private void labelLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelLoginMouseClicked
@@ -656,6 +715,10 @@ public class Inicio extends javax.swing.JFrame {
         // Agregar panel de Register al panel de contenido
         renderizarVista(panelContainerLogin);
     }//GEN-LAST:event_labelLoginMouseClicked
+
+    private void fieldRegisterPassword1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldRegisterPassword1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldRegisterPassword1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -696,12 +759,13 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnRegister;
     private javax.swing.JCheckBox checkboxRememberMe;
-    private javax.swing.JTextField fieldEmail;
-    private javax.swing.JTextField fieldEmail1;
     private javax.swing.JTextField fieldFirstName;
     private javax.swing.JTextField fieldLastName;
-    private javax.swing.JPasswordField fieldPassword;
-    private javax.swing.JPasswordField fieldPassword1;
+    private javax.swing.JTextField fieldLoginEmail;
+    private javax.swing.JPasswordField fieldLoginPassword;
+    private javax.swing.JPasswordField fieldRegisterConfirmPassword;
+    private javax.swing.JTextField fieldRegisterEmail;
+    private javax.swing.JPasswordField fieldRegisterPassword1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel labelAccountExists;
@@ -717,7 +781,8 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel labelLoginTitle;
     private javax.swing.JLabel labelLoginTitle1;
     private javax.swing.JLabel labelPassword;
-    private javax.swing.JLabel labelPassword1;
+    private javax.swing.JLabel labelRegisterConfirmPassword;
+    private javax.swing.JLabel labelRegisterPassword1;
     private javax.swing.JLabel labelResetPassword;
     private javax.swing.JLabel labelResetPassword1;
     private javax.swing.JPanel panelBackground;
@@ -737,10 +802,11 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JPanel panelLogin;
     private javax.swing.JPanel panelLoginForm;
     private javax.swing.JPanel panelPassword;
-    private javax.swing.JPanel panelPassword1;
     private javax.swing.JPanel panelPasswordOptions;
     private javax.swing.JPanel panelPasswordReset1;
     private javax.swing.JPanel panelRegister;
+    private javax.swing.JPanel panelRegisterConfirmPassword;
     private javax.swing.JPanel panelRegisterForm;
+    private javax.swing.JPanel panelRegisterPassword1;
     // End of variables declaration//GEN-END:variables
 }

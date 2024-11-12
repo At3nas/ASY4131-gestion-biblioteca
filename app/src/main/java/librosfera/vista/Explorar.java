@@ -12,7 +12,6 @@ import javax.swing.table.DefaultTableModel;
 import librosfera.modelo.Libro;
 import librosfera.modelo.ListaLibros;
 import librosfera.modelo.Main;
-import librosfera.vista.components.BookCard;
 
 public class Explorar extends javax.swing.JPanel {
 
@@ -67,11 +66,6 @@ public class Explorar extends javax.swing.JPanel {
         fieldSearch.setMaximumSize(new java.awt.Dimension(500, 50));
         fieldSearch.setMinimumSize(new java.awt.Dimension(500, 50));
         fieldSearch.setPreferredSize(new java.awt.Dimension(500, 50));
-        fieldSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldSearchActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
@@ -80,7 +74,7 @@ public class Explorar extends javax.swing.JPanel {
         btnSearch.setBackground(new java.awt.Color(58, 33, 36));
         btnSearch.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnSearch.setForeground(new java.awt.Color(255, 255, 255));
-        btnSearch.setText("<");
+        btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
         btnSearch.setBorder(null);
         btnSearch.setMaximumSize(new java.awt.Dimension(50, 50));
         btnSearch.setMinimumSize(new java.awt.Dimension(50, 50));
@@ -88,11 +82,6 @@ public class Explorar extends javax.swing.JPanel {
         btnSearch.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSearchMouseClicked(evt);
-            }
-        });
-        btnSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -144,14 +133,6 @@ public class Explorar extends javax.swing.JPanel {
         gridBagConstraints.gridy = 1;
         add(panelBookCards, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void fieldSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldSearchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fieldSearchActionPerformed
-
-    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSearchActionPerformed
     // CLick | Botón Buscar
     private void btnSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchMouseClicked
         // Almacena el modelo de la tabla

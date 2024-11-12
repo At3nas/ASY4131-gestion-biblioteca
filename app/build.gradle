@@ -17,6 +17,10 @@ repositories {
 }
 
 dependencies {
+
+    // https://mvnrepository.com/artifact/org.netbeans.external/AbsoluteLayout
+    implementation group: 'org.netbeans.external', name: 'AbsoluteLayout', version: 'RELEASE122'
+
     // Use JUnit Jupiter for testing.
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
 

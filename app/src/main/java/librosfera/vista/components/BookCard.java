@@ -4,14 +4,9 @@
  */
 package librosfera.vista.components;
 
-import java.awt.image.BufferedImage;
+
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
+
 
 /**
  *
@@ -54,10 +49,13 @@ public class BookCard extends javax.swing.JPanel {
         imgBookCover = new javax.swing.JLabel();
         panelBookInfo = new javax.swing.JPanel();
         labelTitle = new javax.swing.JLabel();
-        labelRate = new javax.swing.JLabel();
         labelAuthor = new javax.swing.JLabel();
+        btnViewMore = new javax.swing.JButton();
 
-        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.Y_AXIS));
+        java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
+        layout.columnWidths = new int[] {0};
+        layout.rowHeights = new int[] {0, 16, 0};
+        setLayout(layout);
 
         panelCover.setBackground(new java.awt.Color(255, 204, 204));
         panelCover.setPreferredSize(new java.awt.Dimension(200, 290));
@@ -67,8 +65,15 @@ public class BookCard extends javax.swing.JPanel {
         imgBookCover.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         panelCover.add(imgBookCover, java.awt.BorderLayout.CENTER);
 
-        add(panelCover);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        add(panelCover, gridBagConstraints);
 
+        panelBookInfo.setMaximumSize(new java.awt.Dimension(200, 84));
+        panelBookInfo.setMinimumSize(new java.awt.Dimension(200, 84));
+        panelBookInfo.setName(""); // NOI18N
+        panelBookInfo.setPreferredSize(new java.awt.Dimension(200, 84));
         panelBookInfo.setLayout(new java.awt.GridBagLayout());
 
         labelTitle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -81,14 +86,6 @@ public class BookCard extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 8, 0);
         panelBookInfo.add(labelTitle, gridBagConstraints);
 
-        labelRate.setText("Puntuación");
-        labelRate.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        panelBookInfo.add(labelRate, gridBagConstraints);
-
         labelAuthor.setText("Autor");
         labelAuthor.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -98,14 +95,25 @@ public class BookCard extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 16, 0);
         panelBookInfo.add(labelAuthor, gridBagConstraints);
 
-        add(panelBookInfo);
+        btnViewMore.setText("Ver más");
+        btnViewMore.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
+        panelBookInfo.add(btnViewMore, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        add(panelBookInfo, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnViewMore;
     private javax.swing.JLabel imgBookCover;
     private javax.swing.JLabel labelAuthor;
-    private javax.swing.JLabel labelRate;
     private javax.swing.JLabel labelTitle;
     private javax.swing.JPanel panelBookInfo;
     private javax.swing.JPanel panelCover;
