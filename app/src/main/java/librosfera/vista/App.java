@@ -1,6 +1,6 @@
 package librosfera.vista;
 
-import javax.swing.ImageIcon;
+
 
 public class App extends javax.swing.JFrame {
     //ImageIcon iconHome = new ImageIcon(this.getClass().getResource("/home.png"));
@@ -51,6 +51,7 @@ public class App extends javax.swing.JFrame {
 
         labelLogo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         labelLogo.setForeground(new java.awt.Color(250, 250, 250));
+        labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/temporal-logo.png"))); // NOI18N
         labelLogo.setText("Librosfera");
         labelLogo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         labelLogo.setIconTextGap(8);
@@ -67,7 +68,7 @@ public class App extends javax.swing.JFrame {
         panelNavItems.setPreferredSize(new java.awt.Dimension(240, 400));
         java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
         jPanel1Layout.columnWidths = new int[] {0};
-        jPanel1Layout.rowHeights = new int[] {0, 24, 0, 24, 0, 24, 0};
+        jPanel1Layout.rowHeights = new int[] {0, 32, 0, 32, 0, 32, 0};
         panelNavItems.setLayout(jPanel1Layout);
 
         labelDashboard.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N

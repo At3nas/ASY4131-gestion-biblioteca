@@ -337,6 +337,7 @@ public class Inicio extends javax.swing.JFrame {
         panelContainerRegister.setLayout(new java.awt.GridLayout(0, 2));
 
         panelImg1.setBackground(new java.awt.Color(255, 243, 235));
+        panelImg1.setMaximumSize(new java.awt.Dimension(55, 16));
         panelImg1.setLayout(new java.awt.GridBagLayout());
 
         jLabel2.setForeground(new java.awt.Color(255, 0, 0));
@@ -689,25 +690,23 @@ public class Inicio extends javax.swing.JFrame {
     private void fieldRegisterConfirmPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldRegisterConfirmPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldRegisterConfirmPasswordActionPerformed
-    
+
     // Click | Botón Registrarse
     private void btnRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegisterMouseClicked
         // ALMACENA LOS CAMPOS //
         String userFirstName = fieldFirstName.getText();
         String userLastName = fieldLastName.getText();
         String userEmail = fieldRegisterEmail.getText();
-        char[] userPassword = fieldRegisterConfirmPassword.getPassword();
+        char[] userPassword = fieldRegisterPassword1.getPassword();
         char[] userPassword2 = fieldRegisterConfirmPassword.getPassword();
-        
+
+        // Si las contraseñas coinciden
         if (Arrays.equals(userPassword, userPassword2)) {
             System.out.println("CONTRASEÑA VALIDA");
         } else {
             System.out.println("CONTRASEÑA INVALIDA");
         }
-        
-        //String[] fields = [userFirstName, userLastName, userEmail, userPassword];
-        
-        // //
+
     }//GEN-LAST:event_btnRegisterMouseClicked
 
     private void labelLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelLoginMouseClicked
