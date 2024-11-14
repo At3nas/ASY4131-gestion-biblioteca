@@ -16,6 +16,11 @@ import librosfera.vista.components.BookCard;
 
 public class Explorar extends javax.swing.JPanel {
 
+    // Crea la URL para la búsqueda
+    String url;
+    String searchFields = "&fields=title,author_name,isbn";
+    String searchLimits = "&limit=20&offset=0";
+
     /**
      * Creates new form Explorar
      */
@@ -35,6 +40,7 @@ public class Explorar extends javax.swing.JPanel {
 
         panelHeader = new javax.swing.JPanel();
         labelExplorar = new javax.swing.JLabel();
+        selectSearchFilter = new javax.swing.JComboBox<>();
         fieldSearch = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
         panelScroll = new javax.swing.JScrollPane();
@@ -62,13 +68,26 @@ public class Explorar extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 64);
         panelHeader.add(labelExplorar, gridBagConstraints);
 
+        selectSearchFilter.setBackground(new java.awt.Color(234, 234, 234));
+        selectSearchFilter.setForeground(new java.awt.Color(51, 51, 51));
+        selectSearchFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "General", "Titulo", "Autor" }));
+        selectSearchFilter.setFocusable(false);
+        selectSearchFilter.setMaximumSize(new java.awt.Dimension(120, 50));
+        selectSearchFilter.setMinimumSize(new java.awt.Dimension(120, 50));
+        selectSearchFilter.setPreferredSize(new java.awt.Dimension(120, 50));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 8);
+        panelHeader.add(selectSearchFilter, gridBagConstraints);
+
         fieldSearch.setBackground(new java.awt.Color(240, 240, 240));
         fieldSearch.setForeground(new java.awt.Color(153, 153, 153));
         fieldSearch.setMaximumSize(new java.awt.Dimension(500, 50));
         fieldSearch.setMinimumSize(new java.awt.Dimension(500, 50));
         fieldSearch.setPreferredSize(new java.awt.Dimension(500, 50));
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 0;
         panelHeader.add(fieldSearch, gridBagConstraints);
 
@@ -87,7 +106,7 @@ public class Explorar extends javax.swing.JPanel {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 8);
         panelHeader.add(btnSearch, gridBagConstraints);
@@ -99,7 +118,7 @@ public class Explorar extends javax.swing.JPanel {
         panelScroll.setPreferredSize(new java.awt.Dimension(900, 500));
 
         panelBookCards.setBackground(new java.awt.Color(250, 250, 250));
-        panelBookCards.setLayout(new java.awt.GridLayout(5, 2, 24, 24));
+        panelBookCards.setLayout(new java.awt.GridLayout(5, 4, 24, 24));
         panelScroll.setViewportView(panelBookCards);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -109,16 +128,28 @@ public class Explorar extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
     // CLick | Botón Buscar
     private void btnSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchMouseClicked
-        // Almacena el modelo de la tabla
-        //DefaultTableModel modelResults = (DefaultTableModel) tableSearchResult.getModel();
-
-        // Limpia la tabla para actualizar los datos
-        //modelResults.setRowCount(0);
-        // Obtener texto ingresado por el usuario
+        // Obtener el filtro de búsqueda seleccionado
+        String searchFilter = selectSearchFilter.getSelectedItem().toString();
+        // Obtener el texto de búsqueda ingresado
         String inputSearch = fieldSearch.getText().replace(" ", "+");
 
-        // API URL
-        String url = "https://openlibrary.org/search.json?q=" + inputSearch + "&fields=title,author_name,isbn&limit=10&offset=0";
+        System.out.println(searchFilter);
+
+        // Modifica la URL de búsqueda en base al filtro seleccionado
+        switch (searchFilter) {
+            // Búsqueda general
+            case "General":
+                this.url = "https://openlibrary.org/search.json?q=" + inputSearch + this.searchFields + this.searchLimits;
+                break;
+            // Búsqueda por título
+            case "Titulo":
+                this.url = "https://openlibrary.org/search.json?title=" + inputSearch + this.searchFields + this.searchLimits;
+                break;
+            // Búsqueda por autor
+            case "Autor":
+                this.url = "https://openlibrary.org/search.json?author=" + inputSearch + this.searchFields + this.searchLimits;
+                break;
+        }
 
         // INSTANCIA DE HTTPCLIENT
         // se encarga de enviar una request al servidor
@@ -135,7 +166,7 @@ public class Explorar extends javax.swing.JPanel {
             // Crear objeto GSON
             Gson gson = new Gson();
             ListaLibros listaLibros = gson.fromJson(strResponse, ListaLibros.class);
-            
+
             // Limpiar panel antes de volver a mostrar resultados
             panelBookCards.removeAll();
             panelBookCards.revalidate();
@@ -182,5 +213,6 @@ public class Explorar extends javax.swing.JPanel {
     private javax.swing.JPanel panelBookCards;
     private javax.swing.JPanel panelHeader;
     private javax.swing.JScrollPane panelScroll;
+    private javax.swing.JComboBox<String> selectSearchFilter;
     // End of variables declaration//GEN-END:variables
 }
