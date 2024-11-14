@@ -26,12 +26,12 @@ dependencies {
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.0.1-jre'
-    
-    // GOOGLE BOOKS API
-    implementation 'com.google.apis:google-api-services-books:v1-rev20240214-2.0.0'
-
-    // GSON LIBRARY
+   
+    // GSON //
     implementation 'com.google.code.gson:gson:2.11.0'
+    
+    // MariaDB Connector //
+    implementation 'org.mariadb.jdbc:mariadb-java-client:3.5.0'
 }
 
 application {

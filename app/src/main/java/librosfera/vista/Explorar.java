@@ -12,6 +12,7 @@ import javax.swing.table.DefaultTableModel;
 import librosfera.modelo.Libro;
 import librosfera.modelo.ListaLibros;
 import librosfera.modelo.Main;
+import librosfera.vista.components.BookCard;
 
 public class Explorar extends javax.swing.JPanel {
 
@@ -36,16 +37,17 @@ public class Explorar extends javax.swing.JPanel {
         labelExplorar = new javax.swing.JLabel();
         fieldSearch = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
-        panelBookCards = new javax.swing.JScrollPane();
-        tableSearchResult = new javax.swing.JTable();
+        panelScroll = new javax.swing.JScrollPane();
+        panelBookCards = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(250, 250, 250));
+        setMaximumSize(new java.awt.Dimension(900, 600));
         setLayout(new java.awt.GridBagLayout());
 
         panelHeader.setBackground(new java.awt.Color(250, 250, 250));
-        panelHeader.setMaximumSize(new java.awt.Dimension(800, 100));
-        panelHeader.setMinimumSize(new java.awt.Dimension(800, 100));
-        panelHeader.setPreferredSize(new java.awt.Dimension(800, 100));
+        panelHeader.setMaximumSize(new java.awt.Dimension(900, 100));
+        panelHeader.setMinimumSize(new java.awt.Dimension(900, 100));
+        panelHeader.setPreferredSize(new java.awt.Dimension(900, 100));
         java.awt.GridBagLayout panelHeaderLayout = new java.awt.GridBagLayout();
         panelHeaderLayout.columnWidths = new int[] {0, 0, 0, 0, 0, 0, 0};
         panelHeaderLayout.rowHeights = new int[] {0};
@@ -62,7 +64,6 @@ public class Explorar extends javax.swing.JPanel {
 
         fieldSearch.setBackground(new java.awt.Color(240, 240, 240));
         fieldSearch.setForeground(new java.awt.Color(153, 153, 153));
-        fieldSearch.setBorder(null);
         fieldSearch.setMaximumSize(new java.awt.Dimension(500, 50));
         fieldSearch.setMinimumSize(new java.awt.Dimension(500, 50));
         fieldSearch.setPreferredSize(new java.awt.Dimension(500, 50));
@@ -76,6 +77,7 @@ public class Explorar extends javax.swing.JPanel {
         btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
         btnSearch.setBorder(null);
+        btnSearch.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSearch.setMaximumSize(new java.awt.Dimension(50, 50));
         btnSearch.setMinimumSize(new java.awt.Dimension(50, 50));
         btnSearch.setPreferredSize(new java.awt.Dimension(50, 50));
@@ -90,62 +92,33 @@ public class Explorar extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 8);
         panelHeader.add(btnSearch, gridBagConstraints);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_START;
-        add(panelHeader, gridBagConstraints);
+        add(panelHeader, new java.awt.GridBagConstraints());
 
-        panelBookCards.setMaximumSize(new java.awt.Dimension(900, 500));
-        panelBookCards.setMinimumSize(new java.awt.Dimension(900, 500));
-        panelBookCards.setPreferredSize(new java.awt.Dimension(900, 500));
+        panelScroll.setMaximumSize(new java.awt.Dimension(900, 500));
+        panelScroll.setMinimumSize(new java.awt.Dimension(900, 500));
+        panelScroll.setPreferredSize(new java.awt.Dimension(900, 500));
 
-        tableSearchResult.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Título", "Autor"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        panelBookCards.setViewportView(tableSearchResult);
+        panelBookCards.setBackground(new java.awt.Color(250, 250, 250));
+        panelBookCards.setLayout(new java.awt.GridLayout(5, 2, 24, 24));
+        panelScroll.setViewportView(panelBookCards);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        add(panelBookCards, gridBagConstraints);
+        add(panelScroll, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
     // CLick | Botón Buscar
     private void btnSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchMouseClicked
         // Almacena el modelo de la tabla
-        DefaultTableModel modelResults = (DefaultTableModel) tableSearchResult.getModel();
+        //DefaultTableModel modelResults = (DefaultTableModel) tableSearchResult.getModel();
 
         // Limpia la tabla para actualizar los datos
-        modelResults.setRowCount(0);
-
+        //modelResults.setRowCount(0);
         // Obtener texto ingresado por el usuario
         String inputSearch = fieldSearch.getText().replace(" ", "+");
 
         // API URL
-        String url = "https://openlibrary.org/search.json?q=" + inputSearch + "&fields=title,author_name,isbn";
+        String url = "https://openlibrary.org/search.json?q=" + inputSearch + "&fields=title,author_name,isbn&limit=10&offset=0";
 
         // INSTANCIA DE HTTPCLIENT
         // se encarga de enviar una request al servidor
@@ -162,21 +135,34 @@ public class Explorar extends javax.swing.JPanel {
             // Crear objeto GSON
             Gson gson = new Gson();
             ListaLibros listaLibros = gson.fromJson(strResponse, ListaLibros.class);
-
+            
+            // Limpiar panel antes de volver a mostrar resultados
+            panelBookCards.removeAll();
+            panelBookCards.revalidate();
+            panelBookCards.repaint();
             for (Libro l : listaLibros.getDocs()) {
-                // Atributos //
-                String title = l.getTitle();
-                String author = l.getAuthor_name().getFirst();
-                //String isbn = l.getIsbn().getFirst();
 
-                // Agregar una tarjeta
-                //BookCard card = new BookCard(title, author);
-                //panelBookCards.add(card);
-                // Agregar libros a la tabla
-                modelResults.addRow(new Object[]{
-                    title,
-                    author
-                });
+                // Validar campos antes de acceder a ellos
+                String title = l.getTitle() != null ? l.getTitle() : "invalid";
+                String author = (l.getAuthor_name() != null) && !(l.getAuthor_name().isEmpty()) ? l.getAuthor_name().getFirst() : "invalid";
+                String isbn = (l.getIsbn() != null) && !(l.getIsbn().isEmpty()) ? l.getIsbn().getFirst() : "invalid";
+
+                // Imprimir los datos para verificación (puedes quitar esto después de la prueba)
+                System.out.println("AUTOR: " + author);
+                System.out.println("TITULO: " + title);
+                System.out.println("ISBN: " + isbn);
+                System.out.println("---------------------------------------");
+
+                // Crea y agrega la tarjeta solo si los datos son válidos
+                if (!author.equals("invalid") && !title.equals("invalid") && !isbn.equals("invalid")) {
+                    BookCard card = new BookCard(title, author, isbn); // Puedes agregar ISBN si lo necesitas
+                    panelBookCards.add(card);
+                } else {
+                    System.out.println("ESTE LIBRO ES INVALIDO");
+                }
+                panelBookCards.revalidate();
+                panelBookCards.repaint();
+
             }
 
             //ListaLibros listaLibros1 = gson.fromJson(response.body(), ListaLibros.class);    
@@ -193,8 +179,8 @@ public class Explorar extends javax.swing.JPanel {
     private javax.swing.JButton btnSearch;
     private javax.swing.JTextField fieldSearch;
     private javax.swing.JLabel labelExplorar;
-    private javax.swing.JScrollPane panelBookCards;
+    private javax.swing.JPanel panelBookCards;
     private javax.swing.JPanel panelHeader;
-    private javax.swing.JTable tableSearchResult;
+    private javax.swing.JScrollPane panelScroll;
     // End of variables declaration//GEN-END:variables
 }
