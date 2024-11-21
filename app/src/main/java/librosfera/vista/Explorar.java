@@ -15,15 +15,14 @@ import librosfera.modelo.Main;
 import librosfera.vista.components.BookCard;
 
 public class Explorar extends javax.swing.JPanel {
-
     // Crea la URL para la búsqueda
     String url;
+    // Establece los datos/campos de cada libro
     String searchFields = "&fields=title,author_name,isbn";
+    // Establece la cantidad de libros que se obtienen del request
     String searchLimits = "&limit=20&offset=0";
 
-    /**
-     * Creates new form Explorar
-     */
+    
     public Explorar() {
         initComponents();
     }
@@ -126,14 +125,12 @@ public class Explorar extends javax.swing.JPanel {
         gridBagConstraints.gridy = 1;
         add(panelScroll, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
-    // CLick | Botón Buscar
+    // Click | Botón Buscar
     private void btnSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchMouseClicked
         // Obtener el filtro de búsqueda seleccionado
         String searchFilter = selectSearchFilter.getSelectedItem().toString();
         // Obtener el texto de búsqueda ingresado
         String inputSearch = fieldSearch.getText().replace(" ", "+");
-
-        System.out.println(searchFilter);
 
         // Modifica la URL de búsqueda en base al filtro seleccionado
         switch (searchFilter) {
@@ -151,15 +148,15 @@ public class Explorar extends javax.swing.JPanel {
                 break;
         }
 
-        // INSTANCIA DE HTTPCLIENT
+        // Instancia de HttpClient
         // se encarga de enviar una request al servidor
         HttpClient client = HttpClient.newHttpClient();
 
-        // CREAR REQUEST
+        // Crear request
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(url)).GET().build();
 
         try {
-            // ENVIAR REQUEST
+            // Enviar request
             HttpResponse response = client.send(request, HttpResponse.BodyHandlers.ofString());
             String strResponse = response.body().toString();
 
@@ -171,8 +168,9 @@ public class Explorar extends javax.swing.JPanel {
             panelBookCards.removeAll();
             panelBookCards.revalidate();
             panelBookCards.repaint();
-            for (Libro l : listaLibros.getDocs()) {
 
+            // Por cada libro, obtener datos y renderizarlo
+            for (Libro l : listaLibros.getDocs()) {
                 // Validar campos antes de acceder a ellos
                 String title = l.getTitle() != null ? l.getTitle() : "invalid";
                 String author = (l.getAuthor_name() != null) && !(l.getAuthor_name().isEmpty()) ? l.getAuthor_name().getFirst() : "invalid";
@@ -188,15 +186,13 @@ public class Explorar extends javax.swing.JPanel {
                 if (!author.equals("invalid") && !title.equals("invalid") && !isbn.equals("invalid")) {
                     BookCard card = new BookCard(title, author, isbn); // Puedes agregar ISBN si lo necesitas
                     panelBookCards.add(card);
-                } else {
-                    System.out.println("ESTE LIBRO ES INVALIDO");
                 }
+
+                // Actualiza el panel contenedor
                 panelBookCards.revalidate();
                 panelBookCards.repaint();
-
             }
 
-            //ListaLibros listaLibros1 = gson.fromJson(response.body(), ListaLibros.class);    
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InterruptedException ex) {

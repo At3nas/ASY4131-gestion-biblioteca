@@ -3,7 +3,8 @@ package librosfera.vista;
 
 
 public class Dashboard extends javax.swing.JPanel {
-
+    //StarRater starRater = new StarRater();
+    
     /**
      * Creates new form Dashboard
      */
@@ -20,19 +21,20 @@ public class Dashboard extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelViewTitle = new javax.swing.JLabel();
+        panelRating = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(250, 250, 250));
         setLayout(new java.awt.GridBagLayout());
 
-        labelViewTitle.setBackground(new java.awt.Color(0, 0, 0));
-        labelViewTitle.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        labelViewTitle.setText("Dashboard");
-        add(labelViewTitle, new java.awt.GridBagConstraints());
+        panelRating.setMaximumSize(new java.awt.Dimension(300, 300));
+        panelRating.setMinimumSize(new java.awt.Dimension(300, 300));
+        panelRating.setName(""); // NOI18N
+        panelRating.setPreferredSize(new java.awt.Dimension(300, 300));
+        add(panelRating, new java.awt.GridBagConstraints());
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel labelViewTitle;
+    private javax.swing.JPanel panelRating;
     // End of variables declaration//GEN-END:variables
 }
